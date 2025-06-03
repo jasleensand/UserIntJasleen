@@ -38,17 +38,19 @@
   .desktop-nav {
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     width: 100%;
     padding: 1.5rem 2rem;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-end;
+
     background: transparent;
     z-index: 1000;
   }
 
-  .nav-links ul {
+  
+
+  .desktop-nav ul {
   display: flex;
   align-items: center;
   gap: 76px;
@@ -57,7 +59,7 @@
   padding: 0;
 }
 
-  .nav-links a {
+  .desktop-nav a {
   text-decoration: none;
   color: white;
   width: 142px;
@@ -75,6 +77,6 @@
   align-items: center;
 }
 }
-    
+
 
 
