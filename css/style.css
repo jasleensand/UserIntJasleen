@@ -87,21 +87,26 @@ body {
 .hero {
   position: relative;
   text-align: center;
+  width: 100%;
+  height: 100vh; 
+  overflow: hidden;
 }
 
 .hero-image {
-  width: 100%;
-  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;  
+  object-position: center;
+ 
 }
 
 .hero-text {
-  position: absolute;
-  bottom: 2rem;
+    position: absolute;
+  bottom: 10%; 
   left: 0;
   right: 0;
-  color: white;
-  font-size: 2rem;
-  font-weight: bold;
+  padding: 0 1rem;
 }
 
 .keyword {
@@ -127,6 +132,3 @@ line-height: normal;
   margin: 0 0.5rem;
 }
 
-.highlight {
-  color: #f57c1f; /* or any highlight color you want */
-}
