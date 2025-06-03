@@ -13,29 +13,8 @@ body {
   overflow-x: hidden;
 }
 
-/* Transparent Navbar */
-.navbar {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 10;
-}
 
-.logo {
-  height: 40px;
-}
-
-.hamburger {
-  height: 24px;
-  cursor: pointer;
-}
-
-
-/* Navbar fixed to top-right */
+/* Desktop Nav */
 .navbar {
   position: fixed;
   top: 0;
@@ -58,6 +37,10 @@ body {
   cursor: pointer;
   z-index: 1001;
 }
+
+
+
+
 
 /* Sliding nav (hidden by default) */
 .mobile-nav {
@@ -116,6 +99,16 @@ body {
   object-position: center;
  
 }
+  .cart-icon {
+    height: 48px;
+    width: auto;
+    margin-left: 1rem;
+    cursor: pointer;
+  }
+
+  .logo {
+    height: 50px;
+  }
 
 
 
