@@ -1,7 +1,4 @@
 
-
-
-
 * {
   margin: 0;
   padding: 0;
@@ -31,15 +28,6 @@ body {
 .logo {
   height: 40px;
 }
-
-.hamburger {
-  height: 24px;
-  cursor: pointer;
-  z-index: 1001;
-}
-
-
-
 
 
 /* Sliding nav (hidden by default) */
@@ -100,7 +88,7 @@ body {
  
 }
   .cart-icon {
-    height: 48px;
+    height: 39px;
     width: auto;
     margin-left: 1rem;
     cursor: pointer;

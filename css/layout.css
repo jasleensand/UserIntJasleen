@@ -1,6 +1,8 @@
 .hamburger {
-  max-width: 30px;
-  height: auto;
+  height: 21px;
+  width: 34px;
+  cursor: pointer;
+  margin-top: 20px; 
 }
 
 
@@ -22,7 +24,7 @@
 @media (min-width: 768px) {
   .desktop-nav {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     gap: 2rem;
     padding: 1rem;
   }
@@ -40,7 +42,7 @@
     top: 0;
     right: 0;
     width: 100%;
-    padding: 1.5rem 2rem;
+    padding: .8rem .7rem;
     display: flex;
     justify-content: flex-end;
 
@@ -53,7 +55,7 @@
   .desktop-nav ul {
   display: flex;
   align-items: center;
-  gap: 76px;
+  gap: 20px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -62,20 +64,23 @@
   .desktop-nav a {
   text-decoration: none;
   color: white;
-  width: 142px;
-  height: 44px;
+  width: 111px;
+  height: 33px;
   padding: 13px 36px 14px 35px;
   border: 1px solid white;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  border-radius: 16px; 
+  border-radius: 11px; 
   font-size: 1rem;
   background: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.logo {
+    height: 45px;
+  }
 }
 
 
