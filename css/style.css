@@ -96,9 +96,6 @@ body {
     cursor: pointer;
   }
 
-  .logo {
-    height: 60px;
-  }
 
 
 
@@ -136,4 +133,40 @@ body {
   }
 }
 
+.room-card {
+  background-color: #3e2b23;
+  border-radius: 0 0 16px 16px;
+  max-width: 320px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
 
+.room-card.active {
+  display: flex;
+}
+
+.arched-image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+
+  border-top-left-radius: 999px;
+  border-top-right-radius: 999px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+
+  border: 4px solid #3e2b23;
+  border-bottom: none; 
+
+  background-color: #3e2b23;
+}
+
+.arched-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
