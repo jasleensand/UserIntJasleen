@@ -26,7 +26,8 @@ body {
 }
 
 .logo {
-  height: 40px;
+  height: 50px;
+  width: auto;
 }
 
 
@@ -169,4 +170,15 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.details-btn {
+  background-color: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: A;
 }

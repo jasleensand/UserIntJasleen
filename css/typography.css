@@ -36,6 +36,26 @@ font-weight: 400;
 line-height: normal;
 }
 
-.explore-rooms h2 , .section-title , .room-title {
+.explore-rooms h2 , .section-title, .details-btn {
 font-family: 'AMORIA', sans-serif;
+}
+
+.section-title{
+color: #FFF;
+text-align: center;
+font-family: AMORIA;
+font-size: 64px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.room-title {
+color: #FFF;
+text-align: center;
+font-family: AMORIA;
+font-size: 28px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
 }
