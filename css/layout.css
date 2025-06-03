@@ -1,6 +1,29 @@
-.keyword .orange_keyword {
-width: 186px;
-height: 31px;
-flex-shrink: 0;
+.hamburger {
+  max-width: 30px;
+  height: auto;
 }
 
+
+
+@media (min-width: 768px) {
+  .mobile-nav {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: none !important;
+  }
+}
+
+.desktop-nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktop-nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    padding: 1rem;
+  }
+}

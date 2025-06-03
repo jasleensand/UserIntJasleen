@@ -1,0 +1,27 @@
+/* fonts */
+
+@font-face {
+  font-family: 'AMORIA';
+  src: url('../fonts/amoria.zip');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'baskerville';
+  src: url('../fonts/baskerville.zip');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'lemon_milk';
+  src: url('../fonts/lemon_milk.zip');
+  font-weight: normal;
+}
+
+
+.mobile-nav ul {
+font-family: 'AMORIA', sans-serif;
+font-size: 32px;
+font-style: normal;
+font-weight: 400;
+}

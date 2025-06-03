@@ -1,22 +1,6 @@
-/* fonts */
 
-@font-face {
-  font-family: 'AMORIA';
-  src: url('../fonts/amoria.zip');
-  font-weight: normal;
-}
 
-@font-face {
-  font-family: 'baskerville';
-  src: url('../fonts/baskerville.zip');
-  font-weight: normal;
-}
 
-@font-face {
-  font-family: 'lemon_milk';
-  src: url('../fonts/lemon_milk.zip');
-  font-weight: normal;
-}
 
 * {
   margin: 0;
@@ -51,37 +35,69 @@ body {
 }
 
 
+/* Navbar fixed to top-right */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background: transparent;
+}
 
-/* Slide-out Mobile Nav */
+.logo {
+  height: 40px;
+}
+
+.hamburger {
+  height: 24px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Sliding nav (hidden by default) */
 .mobile-nav {
   position: fixed;
   top: 0;
-  left: -100%;
+  right: -100%;
+  left: auto;
   width: 100%;
   height: 100vh;
-  background-color: #f57c1f; /* Adjust as needed */
-  color: white;
-  z-index: 20;
+  background-color: #f57c1f;
   display: flex;
-  align-items: center;
   justify-content: center;
-  transition: left 0.3s ease;
+  align-items: center;
+  transition: right 0.3s ease-in-out;
+  z-index: 999;
+}
+
+.mobile-nav.active {
+  right: 0;
 }
 
 .mobile-nav ul {
   list-style: none;
-  text-align: center;
+  margin-left: 10rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+
 }
 
-.mobile-nav ul li {
-  margin: 1.5rem 0;
+.mobile-nav li {
+  margin: 2rem 0;
 }
 
-.mobile-nav ul li a {
+.mobile-nav a {
   text-decoration: none;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 }
+
 
 /* Hero Section */
 .hero {
@@ -101,34 +117,7 @@ body {
  
 }
 
-.hero-text {
-    position: absolute;
-  bottom: 10%; 
-  left: 0;
-  right: 0;
-  padding: 0 1rem;
-}
 
-.keyword {
-color: #FFF;
-font-family: AMORIA;
-font-size: 40px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-}
 
-.orange_keyword{
-color: #FF822E;
-font-family: AMORIA;
-font-size: 40px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-}
 
-.hero-text span {
-  display: inline-block;
-  margin: 0 0.5rem;
-}
 
