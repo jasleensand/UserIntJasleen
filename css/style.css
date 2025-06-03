@@ -1,0 +1,132 @@
+/* fonts */
+
+@font-face {
+  font-family: 'AMORIA';
+  src: url('../fonts/amoria.zip');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'baskerville';
+  src: url('../fonts/baskerville.zip');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'lemon_milk';
+  src: url('../fonts/lemon_milk.zip');
+  font-weight: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+
+/* Transparent Navbar */
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.logo {
+  height: 40px;
+}
+
+.hamburger {
+  height: 24px;
+  cursor: pointer;
+}
+
+
+
+/* Slide-out Mobile Nav */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100vh;
+  background-color: #f57c1f; /* Adjust as needed */
+  color: white;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: left 0.3s ease;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  text-align: center;
+}
+
+.mobile-nav ul li {
+  margin: 1.5rem 0;
+}
+
+.mobile-nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  text-align: center;
+}
+
+.hero-image {
+  width: 100%;
+  display: block;
+}
+
+.hero-text {
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  right: 0;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.keyword {
+color: #FFF;
+font-family: AMORIA;
+font-size: 40px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.orange_keyword{
+color: #FF822E;
+font-family: AMORIA;
+font-size: 40px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.hero-text span {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+
+.highlight {
+  color: #f57c1f; /* or any highlight color you want */
+}
