@@ -52,7 +52,7 @@ line-height: normal;
 font-family: 'AMORIA', sans-serif;
 }
 
-.section-title , .reviews-title, .escape-title, .about-title, .escape-info-title{
+.section-title , .reviews-title, .escape-title, .about-title, .escape-info-title, .choose-us-title{
 color: #FFF;
 text-align: center;
 font-family: 'AMORIA', sans-serif;
@@ -75,6 +75,10 @@ line-height: normal;
 .reviews-title {
 color: #f57c1f;
 font-size: 55px;
+}
+
+.choose-us-title{
+    margin-top: 40px;
 }
 
 .room-title {
@@ -155,7 +159,7 @@ p{
 }
 
 
-.escape-info-description{
+.escape-info-description, .choose-title{
     color: white;
     font-family: 'lemon_milk_regular';
     font-size: 18px;
@@ -170,4 +174,13 @@ p{
     font-size: 70px;
 }
 
+}
+.choose-info-description{
+    color: white;
+    font-family: 'lemon_milk_regular';
+}
+
+.choose-title{
+    font-family: 'lemon_milk_med';
+    font-size: 22px;
 }

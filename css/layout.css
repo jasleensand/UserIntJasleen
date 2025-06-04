@@ -560,7 +560,7 @@
 
 .escape-room-info{
   padding-top: 80px;
-  padding-bottom: 50px;
+  padding-bottom: 70px;
 }
 
 @media (min-width: 768px){
@@ -569,5 +569,71 @@
     padding-left:300px;
     padding-right: 300px;
 }
+ .sideContent{
+      display: flex;
+    
+
+    }
+
+  
+.keywords {
+  width: 33%;
+  text-align: left;
+  color: #f57c1f;
+  background: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'AMORIA', sans-serif;
+  font-size: 2.5rem;
+  gap: 1rem;
+}
+
+.escape-room-info {
+  width: 66%;
+  color: white;
+  font-family: 'baskerville';
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-left: 20px;
+  padding-right: 1px;
+}
+.escape-info-description{
+    padding-top: 50px;
+    padding-left:10px;
+    padding-right: 4px;
+}
+.choose-info-description{
+    padding-top: 50px;
+    padding-left:10px;
+    padding-right: 4px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.dotpoint{
+  padding-left: 300px;
+  padding-right: 300px;
+}
+
+}
+
+.choose-info-description{
+  
+  padding-left: 24px;
+  padding-right: 20px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.dotpoint{
+ padding-top: 40px;
+}
+
+.choose-us-list{
+  margin-bottom:90px ;
 }
 
