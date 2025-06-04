@@ -30,7 +30,7 @@ font-weight: 400;
 .desktop-nav a {
 color: #FFF;
 font-family: 'AMORIA', sans-serif;
-font-size: 15px;
+font-size: 20px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
@@ -49,6 +49,14 @@ font-style: normal;
 font-weight: 400;
 line-height: normal;
 }
+
+@media (min-width: 768px) {
+    .section-title , .reviews-title{
+        font-size: 65px;
+
+    }
+}
+
 
 .reviews-title {
 color: #f57c1f;

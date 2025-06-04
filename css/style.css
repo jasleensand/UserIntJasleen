@@ -3,6 +3,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  max-width: 100%;
+  
 }
 
 body {
@@ -18,7 +20,9 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1rem;
+  padding: .5rem;
+  padding-left: 1rem;
+  padding-right: 2rem;
   display: flex;
   justify-content: space-between;
   z-index: 1000;
@@ -96,9 +100,10 @@ body {
  
 }
   .cart-icon {
-    height: 39px;
+    height: 36px;
     width: auto;
     margin-left: 1rem;
+    margin-right: 1rem;
     cursor: pointer;
   }
 

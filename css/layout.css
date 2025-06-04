@@ -42,10 +42,9 @@
     top: 0;
     right: 0;
     width: 100%;
-    padding: .8rem .7rem;
+    padding: .8rem .1rem;
     display: flex;
     justify-content: flex-end;
-
     background: transparent;
     z-index: 1000;
   }
@@ -64,8 +63,8 @@
   .desktop-nav a {
   text-decoration: none;
   color: white;
-  width: 111px;
-  height: 33px;
+  width: 130px;
+  height: 37px;
   padding: 13px 36px 14px 35px;
   border: 1px solid white;
   justify-content: center;
@@ -98,9 +97,10 @@
 
   .value-item img {
     width: 100%;
-    max-width: 300px; 
+    max-width: 400px; 
     height: auto;
   }
+
 }
 
 /* Explore rooms */
@@ -308,7 +308,7 @@
     flex-direction: row ;
     justify-content: center;
     align-items: flex-start;
-    gap: 3rem;
+    gap: 15rem;
     margin-top: 60px;
     
   }
@@ -365,6 +365,7 @@
 
   .footer-logo {
     margin-bottom: 0;
+    margin-left: 2px;
   }
 
   .footer-links {
