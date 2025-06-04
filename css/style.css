@@ -7,10 +7,16 @@
   
 }
 
+
+
 body {
   font-family: sans-serif;
   overflow-x: hidden;
   background-color: white;
+}
+
+body.rooms-page {
+  background-color: #f57c1f; 
 }
 
 
@@ -31,7 +37,7 @@ body {
 }
 
 .navbar.scrolled {
-  background-color: #f57c1f; /* Orange */
+  background-color: #f57c1f; 
 }
 
 .logo {
@@ -159,8 +165,9 @@ body {
   display: flex;
 }
 
-.arched-image {
+.arched-image , .room-arched-image {
   width: 100%;
+ 
   aspect-ratio: 3 / 4;
   overflow: hidden;
 
@@ -175,7 +182,7 @@ body {
   background-color: #3e2b23;
 }
 
-.arched-image img {
+.arched-image img , .room-arched-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -192,3 +199,21 @@ body {
   font-size: 1rem;
   font-family: A;
 }
+
+/* Rooms list page */
+
+.room-arched-image{
+  height: 100%;
+}
+
+.room-details-item{
+  background-color: #3e2b23;
+  border-radius: 0 0 16px 16px;
+  max-width: 320px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
