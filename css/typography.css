@@ -36,18 +36,23 @@ font-weight: 400;
 line-height: normal;
 }
 
-.explore-rooms h2 , .section-title, .details-btn {
+.explore-rooms h2 , .section-title, .details-btn, .reviews-title {
 font-family: 'AMORIA', sans-serif;
 }
 
-.section-title{
+.section-title , .reviews-title{
 color: #FFF;
 text-align: center;
 font-family: AMORIA;
-font-size: 64px;
+font-size: 55px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
+}
+
+.reviews-title {
+color: #f57c1f;
+font-size: 55px;
 }
 
 .room-title {
@@ -58,4 +63,9 @@ font-size: 28px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
+}
+
+.footer-links{
+    font-family:'baskerville';
+    font-size: 11px;
 }
