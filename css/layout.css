@@ -527,4 +527,27 @@
   color: #f57c1f;
 }
 
+/* About Page*/
 
+
+.about-section{
+  margin-top: 30px;
+}
+
+.about-description{
+  margin-top: 90px;
+  margin-bottom: 125px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.keywords{
+  background-color: white;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.keyword{
+  padding-top: 30px;
+
+}

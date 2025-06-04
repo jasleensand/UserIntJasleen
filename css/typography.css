@@ -22,6 +22,12 @@
   src: url('../fonts/lemon_milk_bold.otf');
   font-weight: bold;
 }
+@font-face {
+  font-family: 'LEMON_MILK_med';
+  src: url('../fonts/lemon_milk_med.otf');
+  font-weight: bold;
+}
+
 
 
 
@@ -46,15 +52,17 @@ line-height: normal;
 font-family: 'AMORIA', sans-serif;
 }
 
-.section-title , .reviews-title, .escape-title{
+.section-title , .reviews-title, .escape-title, .about-title{
 color: #FFF;
 text-align: center;
-font-family: AMORIA;
+font-family: 'AMORIA', sans-serif;
 font-size: 55px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
 }
+
+
 
 @media (min-width: 768px) {
     .section-title , .reviews-title{
@@ -86,12 +94,12 @@ line-height: normal;
 
 p{
     font-size: 14px;
-    font-family: 'LEMON_MILK_regular';
+    font-family: 'LEMON_MILK_med';
     text-transform: uppercase;
 }
 
 .difficulty{
-    font-family: 'LEMON_MILK_regular';
+    font-family: 'LEMON_MILK_med';
     font-size: 16px;
     color: #f57c1f;
     text-transform: uppercase;
@@ -100,7 +108,7 @@ p{
 .room-details-btn{
     margin-top: 25px;
     font-size: 18px;
-    font-family: 'LEMON_MILK_regular';
+    font-family: 'LEMON_MILK_med';
     color: #FFF;
     text-transform: uppercase;
 }
@@ -108,7 +116,7 @@ p{
 
 .more-rooms-text {
   color: #f57c1f;
-  font-family: 'LEMON_MILK_regular', sans-serif;
+  font-family: 'LEMON_MILK_med', sans-serif;
   font-size: 43px;        /* Mobile default */
   font-weight: bold;
   line-height: normal;
@@ -124,6 +132,24 @@ p{
   .more-rooms-text {
     font-size: 65px;       
     white-space: nowrap;  
-    font-family: 'LEMON_MILK_regular', sans-serif;   
+    font-family: 'LEMON_MILK_med', sans-serif;   
   }
+}
+
+
+/*About page */
+.about-description{
+    color: #FFF;
+    text-align: center;
+    font-family: "LEMON_MILK_med";
+    font-size: 33px;
+    font-style: bold;
+    line-height: normal;
+}
+
+.keyword{
+    color: #f57c1f;
+    text-align: center;
+    font-family: 'AMORIA', sans-serif;
+    font-size: 50px;
 }

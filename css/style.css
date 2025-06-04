@@ -15,7 +15,7 @@ body {
   background-color: white;
 }
 
-body.rooms-page {
+body.rooms-page , body.about-page {
   background-color: #f57c1f; 
 }
 
