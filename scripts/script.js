@@ -19,41 +19,53 @@ window.addEventListener('scroll', () => {
   }
 });
 
-const cards = document.querySelectorAll('.room-card');
-const nextBtn = document.querySelector('.carousel-next');
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileNav = document.getElementById("mobile-nav");
 
-let current = 0;
+  menuToggle.addEventListener("click", () => {
+    mobileNav.classList.toggle("active");
+  });
 
-nextBtn.addEventListener('click', () => {
-  // Hide current
-  cards[current].classList.remove('active');
+  // Navbar background color change on scroll
+  const navbar = document.querySelector('.navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
 
-  // Move to next card
-  current = (current + 1) % cards.length;
+  const cards = document.querySelectorAll('.room-card');
+  const nextBtn = document.querySelector('.carousel-next');
+  let currentIndex = 0;
 
-  // Show new one
-  cards[current].classList.add('active');
-});
+  function updateCards() {
+    // Reset all
+    cards.forEach(card => card.classList.remove('active'));
 
+    if (window.innerWidth >= 768) {
+      // DESKTOP: show 2 cards
+      const first = currentIndex % cards.length;
+      const second = (currentIndex + 1) % cards.length;
 
-const dcards = document.querySelectorAll('.room-card');
-const dnextBtn = document.querySelector('.carousel-next');
-
-let currentIndex = 0;
-const cardsPerView = window.innerWidth >= 768 ? 2 : 1;
-
-// Initialize: show the first set
-function showCards() {
-  cards.forEach(card => card.classList.remove('active'));
-  for (let i = 0; i < cardsPerView; i++) {
-    const index = (currentIndex + i) % cards.length;
-    cards[index].classList.add('active');
+      cards[first].classList.add('active');
+      cards[second].classList.add('active');
+    } else {
+      // MOBILE: show only 1 card
+      const index = currentIndex % cards.length;
+      cards[index].classList.add('active');
+    }
   }
-}
 
-nextBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex + cardsPerView) % cards.length;
-  showCards();
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % cards.length;
+    updateCards();
+  });
+
+  // Update on resize to re-render layout
+  window.addEventListener('resize', updateCards);
+
+  updateCards(); // initial run
 });
-
-showCards();

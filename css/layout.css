@@ -120,7 +120,7 @@
   position: relative;
   align-items: center;
   justify-content: center;
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   gap: 2rem;
 }
@@ -216,8 +216,10 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
-    gap: 45px;
+    gap: 25px;
     position: relative;
+    flex-direction: row;
+    margin-left: 210px;
   }
 
   .room-card {
@@ -235,6 +237,7 @@
     border: none;
     margin-top: 1rem;
     cursor: pointer;
+    margin-right: 70px;
   }
 }
 
