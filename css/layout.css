@@ -211,4 +211,45 @@
   border: none;
 }
 
+@media (min-width: 768px) {
+  .room-carousel {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    gap: 45px;
+    position: relative;
+  }
+
+  .room-card {
+    display: none; /* hide by default */
+  }
+
+  .room-card.active {
+    display: flex; /* only show active ones */
+  }
+
+  .carousel-next {
+    grid-column: span 2;
+    justify-self: center;
+    background: none;
+    border: none;
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+}
+
+.star-banner{
+  width: 100%;
+  height: auto;
+  min-height: 80px; /* Adjust as needed */
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .star-banner {
+    min-height: 100px;
+    object-fit: cover;
+  }
+}
 

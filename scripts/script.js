@@ -9,6 +9,16 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+//navigation bar color change on scroll
+window.addEventListener('scroll', () => {
+  const navbar = document.querySelector('.navbar');
+  if (window.scrollY > 0) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
 const cards = document.querySelectorAll('.room-card');
 const nextBtn = document.querySelector('.carousel-next');
 
@@ -24,3 +34,26 @@ nextBtn.addEventListener('click', () => {
   // Show new one
   cards[current].classList.add('active');
 });
+
+
+const dcards = document.querySelectorAll('.room-card');
+const dnextBtn = document.querySelector('.carousel-next');
+
+let currentIndex = 0;
+const cardsPerView = window.innerWidth >= 768 ? 2 : 1;
+
+// Initialize: show the first set
+function showCards() {
+  cards.forEach(card => card.classList.remove('active'));
+  for (let i = 0; i < cardsPerView; i++) {
+    const index = (currentIndex + i) % cards.length;
+    cards[index].classList.add('active');
+  }
+}
+
+nextBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex + cardsPerView) % cards.length;
+  showCards();
+});
+
+showCards();
