@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: 'baskerville';
-  src: url('../fonts/baskerville.zip');
+  src: url('../fonts/BaskervvilleSC-Regular.ttf');
   font-weight: normal;
 }
 
@@ -52,7 +52,7 @@ line-height: normal;
 font-family: 'AMORIA', sans-serif;
 }
 
-.section-title , .reviews-title, .escape-title, .about-title{
+.section-title , .reviews-title, .escape-title, .about-title, .escape-info-title{
 color: #FFF;
 text-align: center;
 font-family: 'AMORIA', sans-serif;
@@ -152,4 +152,22 @@ p{
     text-align: center;
     font-family: 'AMORIA', sans-serif;
     font-size: 50px;
+}
+
+
+.escape-info-description{
+    color: white;
+    font-family: 'lemon_milk_regular';
+    font-size: 18px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+  .keyword{
+    color: #f57c1f;
+    text-align: center;
+    font-family: 'AMORIA', sans-serif;
+    font-size: 70px;
+}
+
 }

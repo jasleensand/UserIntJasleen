@@ -551,3 +551,23 @@
   padding-top: 30px;
 
 }
+
+.escape-info-description{
+    padding-top: 50px;
+    padding-left:30px;
+    padding-right: 30px;
+}
+
+.escape-room-info{
+  padding-top: 80px;
+  padding-bottom: 50px;
+}
+
+@media (min-width: 768px){
+  .escape-info-description{
+    padding-top: 50px;
+    padding-left:300px;
+    padding-right: 300px;
+}
+}
+
