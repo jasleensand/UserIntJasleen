@@ -98,7 +98,7 @@ p{
 }
 
 .room-details-btn{
-    margin-top: 10px;
+    margin-top: 25px;
     font-size: 18px;
     font-family: 'LEMON_MILK_regular';
     color: #FFF;
@@ -124,6 +124,6 @@ p{
   .more-rooms-text {
     font-size: 65px;       
     white-space: nowrap;  
-    font-family: 'LEMON_MILK_bold', sans-serif;   
+    font-family: 'LEMON_MILK_regular', sans-serif;   
   }
 }

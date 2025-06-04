@@ -517,4 +517,14 @@
   padding-bottom: 30px;
 }
 
+.room-details-btn:hover {
+  background-color: white;
+  color: #f57c1f;
+}
+
+.nav_buttons:hover {
+  background-color: white;
+  color: #f57c1f;
+}
+
 
