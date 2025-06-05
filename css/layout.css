@@ -309,7 +309,7 @@
     flex-direction: row ;
     justify-content: center;
     align-items: flex-start;
-    gap: 15rem;
+    gap: 6rem;
     margin-top: 60px;
     
   }
@@ -492,6 +492,8 @@
   border-radius: 14px;
   border: 1px solid #FFF;
   margin-bottom: 8px;
+  text-decoration: none;
+  text-align: center;
 } 
 
 .product-list {
