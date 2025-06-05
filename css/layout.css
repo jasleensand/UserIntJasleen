@@ -688,6 +688,96 @@
   height: auto;
 }
 
+/*white box description*/
+
+.room-description-box {
+  border: 1px solid white;
+  border-radius: 14px;
+  border-top-right-radius: 120px;
+  padding: 2rem 1.8rem;
+  margin: 5rem auto;
+  max-width: 320px;
+  text-align: center;
+  background-color: transparent;
+  color: white;
+  font-family: 'baskerville'; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.room-description-text {
+  margin-top:40px ;
+  margin-bottom: 1.5rem;
+}
+
+.desc-star {
+  width: 30px;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .room-description-box {
+    max-width: 600px;
+    border-top-right-radius: 160px;
+  }
+
+  .room-description-text {
+    font-size: 0.95rem;
+  }
+
+  .desc-star {
+    width: 40px;
+  }
+}
+
+/* Default: stacked layout for mobile */
+.god-room-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Desktop: side-by-side layout */
+@media (min-width: 768px) {
+  .god-room-details {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem; 
+   
+  }
+  
+  .room-header {
+    padding-top: 100px;
+  }
+
+  .cross-btn {
+    position: absolute;
+    top: 70px;
+    right: 100px;
+  }
+
+  .description-wrapper{
+    justify-content: space-between;
+    padding-left: 200px;
+  }
+ 
+  .room-description-box {
+    max-width: 480px;
+    padding: 2rem;
+  }
+
+  .room-details-item{
+    max-height: 10px
+  }
+
+
+}
+
+
 
 
 

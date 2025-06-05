@@ -192,3 +192,9 @@ p{
     padding-left: 72px;
     padding-right: 72px;
 }
+
+.room-description-text {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
