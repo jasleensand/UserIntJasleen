@@ -25,6 +25,12 @@ document.addEventListener("DOMContentLoaded", function () {
     cartIndicator.style.display = cartCount > 0 ? "inline-block" : "none";
   }
 
+      
+    const desktopCartIcon = document.getElementById("desktop-cart-icon");
+    if (desktopCartIcon && cartCount > 0) {
+      const isRootPage = location.pathname.endsWith("index.html") || location.pathname === "/";
+      desktopCartIcon.src = isRootPage ? "images/cartfull.svg" : "../images/cartfull.svg";
+    }
   // Calendar Setup
   const calendarDates = document.getElementById("calendar-dates");
   const calendarMonth = document.getElementById("calendar-month");
@@ -142,6 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const confirmationMsg = document.getElementById("confirmation-message");
   const cartBadge = document.getElementById("cart-badge");
 
+
   if (cartBadge) {
     cartBadge.textContent = cartCount;
     if (cartCount > 0) {
@@ -174,7 +181,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (cartIndicator) {
       cartIndicator.style.display = "inline-block";
     }
+
+      if (desktopCartIcon) {
+    desktopCartIcon.src = "../images/cartfull.svg";
+  }
   });
 
   document.getElementById("people-dropdown")?.addEventListener("change", () => {});
 });
+
+
