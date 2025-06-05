@@ -330,6 +330,44 @@ body.rooms-page , body.about-page {
 }
 
 
+/*mobile cart numbe of bookings */
+.cart-link {
+  position: relative;
+}
+
+.cart-item a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.cart-badge {
+  background-color: white;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+  min-width: 20px;
+ 
+}
+
+#cart-icon-indicator{
+  width: 26px;
+  height: 26px;
+  margin-left: 6px;
+  vertical-align: middle;  
+  position: relative;
+  top: -1.5px; 
+  display: none; 
+  max-width: none;
+}
+
+
+
+
+
 
 
 
