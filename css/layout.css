@@ -716,6 +716,8 @@
   margin-top: 0.5rem;
 }
 
+
+
 @media (min-width: 768px) {
   .room-description-box {
     max-width: 600px;
@@ -747,6 +749,7 @@
     justify-content: center;
     align-items: center;
     gap: 4rem; 
+    margin-bottom: 40px;
    
   }
   
@@ -774,8 +777,94 @@
     max-height: 10px
   }
 
+}
+
+.booking-heading{
+  padding-top:50px ;
+}
+
+/* calender */
+
+.calender-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;   
+  align-items: center;       
 
 }
+.calendar-wrapper {
+  background-color: #f57c1f;
+  border-radius: 16px;
+  padding: 1.5rem;
+  width: 330px;
+  color: white;
+  text-align: center;
+}
+  
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.calendar-header button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.calendar-dates {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.3rem;
+}
+
+.calendar-date {
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.calendar-date.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.calendar-date.selected {
+  border: 2px solid white;
+}
+
+.time-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.star-divider {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.orange-star {
+  width: 50px; 
+  height: auto;
+}
+
+
 
 
 

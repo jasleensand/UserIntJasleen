@@ -52,7 +52,7 @@ line-height: normal;
 font-family: 'AMORIA', sans-serif;
 }
 
-.section-title , .reviews-title, .escape-title, .about-title, .escape-info-title, .choose-us-title{
+.section-title , .reviews-title, .escape-title, .about-title, .escape-info-title, .choose-us-title, .booking-heading{
 color: #FFF;
 text-align: center;
 font-family: 'AMORIA', sans-serif;
@@ -60,6 +60,10 @@ font-size: 55px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
+}
+
+.booking-heading{
+    color: #f57c1f;
 }
 
 
@@ -197,4 +201,23 @@ p{
   font-size: 14px;
   line-height: 1.8;
   margin-bottom: 1.5rem;
+}
+
+.calendar-wrapper{
+    font-family: 'lemon_milk_regular';
+}
+
+.calendar-date{
+    font-size: 14px;
+}
+.time-button {
+  color: #3e2b23;
+  font-family: 'lemon_milk_med', sans-serif;
+  font-size: 18px;
+}
+
+.tab-button {
+  color: #3e2b23;
+  font-family: 'lemon_milk_med', sans-serif;
+  font-size: 18px;
 }
