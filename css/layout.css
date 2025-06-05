@@ -394,7 +394,7 @@
   justify-content: center;
 }
 
-.room-details-item {
+.room-details-item{
   background-color: #3e2b23;
   border-top-left-radius: 999px;
   border-top-right-radius: 999px;
@@ -430,6 +430,9 @@
 .room-description{
   margin-top: 15px;
 }
+
+
+
 
 .rating {
   display: flex;
@@ -638,4 +641,55 @@
 .choose-us-list{
   margin-bottom:90px ;
 }
+
+/* date booking page*/
+
+.room-booking{
+  margin-top: 100px ;
+  position: relative;
+}
+
+.cross-btn{
+  padding-left: 83%;
+  height: 32px;
+  width: auto;
+  
+}
+
+.room-booking .escape-title{
+  margin-top: 40px ;
+}
+
+ .room-details-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;         
+  justify-content: center;     
+  min-height: 100vh;           
+  text-align: center;
+
+}
+
+.god-room-details{
+  display: flex;
+  flex-direction: column;
+  align-items: center;         
+  justify-content: center;     
+}
+
+.dollar-sign{
+  padding-top: 11px;
+  padding-left: 3.5px;
+  gap: 0.2rem;
+}
+
+.dollar-icon{
+  width: 37px;
+  height: auto;
+}
+
+
+
+
+
 

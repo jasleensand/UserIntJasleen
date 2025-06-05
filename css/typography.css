@@ -184,3 +184,11 @@ p{
     font-family: 'lemon_milk_med';
     font-size: 22px;
 }
+
+/* date bpoking page */
+
+.room-booking .escape-title{
+    font-size: 42px;
+    padding-left: 72px;
+    padding-right: 72px;
+}

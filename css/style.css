@@ -206,14 +206,4 @@ body.rooms-page , body.about-page {
   height: 100%;
 }
 
-.room-details-item{
-  background-color: #3e2b23;
-  border-radius: 0 0 16px 16px;
-  max-width: 320px;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: white;
-}
 
