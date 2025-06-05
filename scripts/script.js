@@ -17,6 +17,39 @@ document.addEventListener("DOMContentLoaded", function () {
     mobileNav.classList.toggle("active");
   });
 
+  // Carousel Logic
+const cards = document.querySelectorAll(".room-card");
+const cNextBtn = document.querySelector(".carousel-next");
+let currentIndex = 0;
+
+function updateCards() {
+  // Reset all
+  cards.forEach(card => card.classList.remove("active"));
+
+  if (window.innerWidth >= 768) {
+    // DESKTOP: show 2 cards
+    const first = currentIndex % cards.length;
+    const second = (currentIndex + 1) % cards.length;
+
+    cards[first].classList.add("active");
+    cards[second].classList.add("active");
+  } else {
+    // MOBILE: show only 1 card
+    const index = currentIndex % cards.length;
+    cards[index].classList.add("active");
+  }
+}
+
+cNextBtn?.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % cards.length;
+  updateCards();
+});
+
+// Re-evaluate layout on resize
+window.addEventListener("resize", updateCards);
+updateCards(); // Initial run
+
+
   // Cart Star Icon Display
   const cartIndicator = document.getElementById("cart-icon-indicator");
   let cartCount = parseInt(sessionStorage.getItem("cartCount")) || 0;
