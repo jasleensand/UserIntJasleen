@@ -107,11 +107,14 @@ document.addEventListener("DOMContentLoaded", function () {
         div.classList.add("disabled");
       }
 
-      div.addEventListener("click", () => {
-        document.querySelectorAll(".calendar-date").forEach(d => d.classList.remove("selected"));
-        div.classList.add("selected");
-        // Store selected date if needed: cellDate
-      });
+     div.addEventListener("click", () => {
+      document.querySelectorAll(".calendar-date").forEach(d => d.classList.remove("selected"));
+      div.classList.add("selected");
+      selectedDate = cellDate;
+      checkSelections();
+      
+  });
+
 
       calendarDates.appendChild(div);
     }
@@ -135,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  
+
 const dayTab = document.getElementById("dayTab");
 const eveningTab = document.getElementById("eveningTab");
 const timeOptions = document.getElementById("timeOptions");
@@ -154,8 +157,10 @@ function renderTimes(period) {
     btn.addEventListener("click", () => {
       document.querySelectorAll(".time-button").forEach(b => b.classList.remove("selected"));
       btn.classList.add("selected");
-      // Optionally: store selected time
-    });
+      selectedTime = btn.textContent;
+      checkSelections();
+      
+});
     timeOptions.appendChild(btn);
   });
 }
@@ -167,13 +172,56 @@ dayTab.addEventListener("click", () => {
   dayTab.classList.add("active");
   eveningTab.classList.remove("active");
   renderTimes("day");
+ 
 });
 
 eveningTab.addEventListener("click", () => {
   eveningTab.classList.add("active");
   dayTab.classList.remove("active");
   renderTimes("evening");
+  
 });
+
+
+//add to acrt button
+
+let selectedDate = null;
+let selectedTime = null;
+
+const addToCartBtn = document.getElementById("add-to-cart");
+
+function checkSelections() {
+  if (selectedDate && selectedTime) {
+    addToCartBtn.style.display = "block";
+  } else {
+    addToCartBtn.style.display = "none";
+  }
+}
+
+const itemAddToCartBtn = document.getElementById("add-to-cart");
+const confirmationMsg = document.getElementById("confirmation-message");
+
+itemAddToCartBtn.addEventListener("click", () => {
+  confirmationMsg.classList.add("visible");
+
+  // Remove the class after 3 seconds (for fade-out)
+  setTimeout(() => {
+    confirmationMsg.classList.remove("visible");
+  }, 3000);
+});
+
+
+
+
+
+
+document.getElementById("people-dropdown").addEventListener("change", () => {
+  
+});
+
+
+
+
 
 
 

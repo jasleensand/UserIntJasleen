@@ -864,6 +864,23 @@
   height: auto;
 }
 
+.people-selector{
+  padding-top: 20px;
+  padding-left: 50px;
+  gap: .1rem;
+
+}
+
+.add-cart-btn{
+  display: flex;
+  justify-content: center;
+}
+
+.add-cart-btn button {
+  width: 330px;
+}
+
+
 
 
 
