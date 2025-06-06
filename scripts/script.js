@@ -17,61 +17,62 @@ document.addEventListener("DOMContentLoaded", function () {
     mobileNav.classList.toggle("active");
   });
 
-  // Carousel Logic
-const cards = document.querySelectorAll(".room-card");
-const cNextBtn = document.querySelector(".carousel-next");
-let currentIndex = 0;
-
-function updateCards() {
-  // Reset all
-  cards.forEach(card => card.classList.remove("active"));
-
-  if (window.innerWidth >= 768) {
-    // DESKTOP: show 2 cards
-    const first = currentIndex % cards.length;
-    const second = (currentIndex + 1) % cards.length;
-
-    cards[first].classList.add("active");
-    cards[second].classList.add("active");
-  } else {
-    // MOBILE: show only 1 card
-    const index = currentIndex % cards.length;
-    cards[index].classList.add("active");
-  }
-}
-
-cNextBtn?.addEventListener("click", () => {
-  currentIndex = (currentIndex + 1) % cards.length;
-  updateCards();
-});
-
-// Re-evaluate layout on resize
-window.addEventListener("resize", updateCards);
-updateCards(); // Initial run
-
-
-  // Cart Star Icon Display
+  // Cart Setup
   const cartIndicator = document.getElementById("cart-icon-indicator");
+  const desktopCartIcon = document.getElementById("desktop-cart-icon");
   let cartCount = parseInt(sessionStorage.getItem("cartCount")) || 0;
+
+  // Handle path difference for cart icon image
+  const pathPrefix = location.pathname.includes("/sites/") ? "../" : "";
+  const cartFullPath = `${pathPrefix}images/cartfull.svg`;
+  const cartEmptyPath = `${pathPrefix}images/cart.svg`;
 
   if (cartIndicator) {
     cartIndicator.style.display = cartCount > 0 ? "inline-block" : "none";
   }
 
-      
-    const desktopCartIcon = document.getElementById("desktop-cart-icon");
-    if (desktopCartIcon && cartCount > 0) {
-      const isRootPage = location.pathname.endsWith("index.html") || location.pathname === "/";
-      desktopCartIcon.src = isRootPage ? "images/cartfull.svg" : "../images/cartfull.svg";
+  if (desktopCartIcon) {
+    desktopCartIcon.src = cartCount > 0 ? cartFullPath : cartEmptyPath;
+    if (cartCount > 0) {
+      desktopCartIcon.classList.add("cart-full");
     }
-  // Calendar Setup
+  }
 
+  // Carousel Logic
+  const cards = document.querySelectorAll(".room-card");
+  const cNextBtn = document.querySelector(".carousel-next");
+  let currentIndex = 0;
+
+  function updateCards() {
+    cards.forEach(card => card.classList.remove("active"));
+
+    if (window.innerWidth >= 768) {
+      const first = currentIndex % cards.length;
+      const second = (currentIndex + 1) % cards.length;
+      cards[first].classList.add("active");
+      cards[second].classList.add("active");
+    } else {
+      const index = currentIndex % cards.length;
+      cards[index].classList.add("active");
+    }
+  }
+
+  if (cards.length > 0 && cNextBtn) {
+    cNextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % cards.length;
+      updateCards();
+    });
+
+    window.addEventListener("resize", updateCards);
+    updateCards();
+  }
+
+  // Calendar Setup
   const calendarDates = document.getElementById("calendar-dates");
   const calendarMonth = document.getElementById("calendar-month");
   const prevBtn = document.getElementById("prev-month");
   const nextBtn = document.getElementById("next-month");
 
- 
   const months = ["June", "July", "August"];
   const monthData = [
     { year: 2025, month: 5 },
@@ -83,6 +84,8 @@ updateCards(); // Initial run
   const today = new Date();
 
   function generateCalendar() {
+    if (!calendarDates || !calendarMonth) return;
+
     calendarDates.innerHTML = "";
     const { year, month } = monthData[currentMonthIndex];
     const firstDay = new Date(year, month, 1).getDay();
@@ -119,24 +122,23 @@ updateCards(); // Initial run
     }
   }
 
-  prevBtn.addEventListener("click", () => {
-    if (currentMonthIndex > 0) {
-      currentMonthIndex--;
-      generateCalendar();
-    }
-  });
+  if (prevBtn && nextBtn) {
+    prevBtn.addEventListener("click", () => {
+      if (currentMonthIndex > 0) {
+        currentMonthIndex--;
+        generateCalendar();
+      }
+    });
 
-  nextBtn.addEventListener("click", () => {
-    if (currentMonthIndex < months.length - 1) {
-      currentMonthIndex++;
-      generateCalendar();
-    }
-  });
+    nextBtn.addEventListener("click", () => {
+      if (currentMonthIndex < months.length - 1) {
+        currentMonthIndex++;
+        generateCalendar();
+      }
+    });
 
-  generateCalendar();
-  
-
-
+    generateCalendar();
+  }
 
   // Time Slot Tabs
   const dayTab = document.getElementById("dayTab");
@@ -149,6 +151,8 @@ updateCards(); // Initial run
   };
 
   function renderTimes(period) {
+    if (!timeOptions) return;
+
     timeOptions.innerHTML = "";
     times[period].forEach(time => {
       const btn = document.createElement("button");
@@ -166,13 +170,13 @@ updateCards(); // Initial run
 
   renderTimes("day");
 
-  dayTab.addEventListener("click", () => {
+  dayTab?.addEventListener("click", () => {
     dayTab.classList.add("active");
     eveningTab.classList.remove("active");
     renderTimes("day");
   });
 
-  eveningTab.addEventListener("click", () => {
+  eveningTab?.addEventListener("click", () => {
     eveningTab.classList.add("active");
     dayTab.classList.remove("active");
     renderTimes("evening");
@@ -185,7 +189,6 @@ updateCards(); // Initial run
   const addToCartBtn = document.getElementById("add-to-cart");
   const confirmationMsg = document.getElementById("confirmation-message");
   const cartBadge = document.getElementById("cart-badge");
-
 
   if (cartBadge) {
     cartBadge.textContent = cartCount;
@@ -220,12 +223,11 @@ updateCards(); // Initial run
       cartIndicator.style.display = "inline-block";
     }
 
-      if (desktopCartIcon) {
-    desktopCartIcon.src = "../images/cartfull.svg";
-  }
+    if (desktopCartIcon) {
+      desktopCartIcon.src = cartFullPath;
+      desktopCartIcon.classList.add("cart-full");
+    }
   });
 
   document.getElementById("people-dropdown")?.addEventListener("change", () => {});
 });
-
-
