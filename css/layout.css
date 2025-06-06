@@ -686,7 +686,42 @@
 .dollar-icon{
   width: 37px;
   height: auto;
+
 }
+
+.details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  margin-top: 1rem;
+}
+
+.detail-item {
+  display: flex;
+  align-items: left;
+  gap: 0.4rem;
+  color: white;
+  font-family: 'baskerville';
+  font-size: 0.95rem;
+}
+
+.dollar-sign {
+  margin-top: .7rem;
+  display: flex;
+  justify-content: left;
+  padding-left: 0%;
+}
+
+
+
+
+
+
+
+
+
 
 /*white box description*/
 
