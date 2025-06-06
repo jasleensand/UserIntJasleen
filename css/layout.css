@@ -679,7 +679,7 @@
 
 .dollar-sign{
   padding-top: 11px;
-  padding-left: 3.5px;
+  padding-left: 0px;
   gap: 0.2rem;
 }
 
@@ -708,15 +708,18 @@
 }
 
 .dollar-sign {
-  margin-top: .7rem;
+  margin-top: .2rem;
   display: flex;
   justify-content: left;
+  transform: translateX(-3.5px);
   padding-left: 0%;
 }
 
 .room3-price .dollar-sign{
-  padding-left: 19px;
+  padding-left: 22px;
 }
+
+
 
 
 
