@@ -364,6 +364,36 @@ body.rooms-page , body.about-page {
   max-width: none;
 }
 
+.calendar-wrapper {
+  background-color: #f57c1f;
+  border-radius: 16px;
+  padding: 1.5rem;
+  width: 330px;
+  color: white;
+  text-align: center;
+}
+
+.calendar-dates {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.3rem;
+
+
+  min-height: 180px;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-weight: bold;
+  margin-bottom: 0.8rem; 
+}
+
+
+
+
+
+
 
 
 

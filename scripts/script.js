@@ -65,11 +65,13 @@ updateCards(); // Initial run
       desktopCartIcon.src = isRootPage ? "images/cartfull.svg" : "../images/cartfull.svg";
     }
   // Calendar Setup
+
   const calendarDates = document.getElementById("calendar-dates");
   const calendarMonth = document.getElementById("calendar-month");
   const prevBtn = document.getElementById("prev-month");
   const nextBtn = document.getElementById("next-month");
 
+ 
   const months = ["June", "July", "August"];
   const monthData = [
     { year: 2025, month: 5 },
@@ -132,6 +134,9 @@ updateCards(); // Initial run
   });
 
   generateCalendar();
+  
+
+
 
   // Time Slot Tabs
   const dayTab = document.getElementById("dayTab");

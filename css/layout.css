@@ -774,7 +774,7 @@
   }
 
   .room-details-item{
-    max-height: 10px
+    max-height: unset
   }
 
 }
@@ -783,7 +783,7 @@
   padding-top:50px ;
 }
 
-/* calender */
+/* calendar */
 
 .calender-container {
   margin-top: 50px;
@@ -884,25 +884,26 @@
 @media (min-width: 768px) {
   .booking-selection {
     display: flex;
-    
     justify-content: center;
     gap: 4rem;
     padding: 4rem 2rem;
   }
 
   .layout-one {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-  }
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 
   .booking-heading {
-    position: absolute;
-    top: 1550px;
-    font-size: 3rem;
-    color: #f57c1f;
-    
-  }
+  font-size: 3rem;
+  color: #f57c1f;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
 
   .layout-two {
     flex: 2;
