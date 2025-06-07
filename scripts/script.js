@@ -191,93 +191,16 @@ document.addEventListener("DOMContentLoaded", function () {
     renderTimes("evening");
   });
 
-  // Booking Logic
-  const addToCartBtn = document.getElementById("add-to-cart");
-  const confirmationMsg = document.getElementById("confirmation-message");
-
-  function checkSelections() {
-    if (selectedDate && selectedTime) {
-      addToCartBtn.style.display = "block";
-    } else {
-      addToCartBtn.style.display = "none";
-    }
-  }
-
-  addToCartBtn?.addEventListener("click", () => {
-    // Save booking to cart
-    const booking = {
-      room: document.querySelector(".escape-title").textContent,
-      time: selectedTime,
-      date: selectedDate.toDateString(),
-      people: document.getElementById("people-dropdown").value,
-      price: 59
-    };
-
-    let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
-    cart.push(booking);
-    sessionStorage.setItem("cart", JSON.stringify(cart));
-
-    // UI Feedback
-    if (confirmationMsg) {
-      confirmationMsg.classList.add("visible");
-      setTimeout(() => confirmationMsg.classList.remove("visible"), 3000);
-    }
-
-    if (cartIndicator) cartIndicator.style.display = "inline-block";
-    if (desktopCartIcon) {
-      desktopCartIcon.src = cartFullPath;
-      desktopCartIcon.classList.add("cart-full");
-    }
-
-    if (cartBadge) {
-      cartBadge.textContent = cart.length;
-      cartBadge.style.display = "inline-block";
-    }
-  });
 });
 
-// Cart page rendering
-document.addEventListener("DOMContentLoaded", () => {
-  const cartContainer = document.getElementById("cart-container");
-  const emptyCart = document.getElementById("empty-cart");
-  const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
-
-  if (emptyCart && cart.length === 0) {
-    emptyCart.style.display = "block";
-    return;
-  }
-
-  cart.forEach((item, index) => {
-    const card = document.createElement("div");
-    card.className = "booking-card";
-    card.innerHTML = `
-      <h3>${item.room}</h3>
-      <p>${item.date} &nbsp; ${item.time} &nbsp; 👥 ${item.people}</p>
-      <p>$${item.price} pp</p>
-      <button class="remove-btn" data-index="${index}">❌</button>
-    `;
-    cartContainer?.appendChild(card);
-  });
-
-  cartContainer?.addEventListener("click", (e) => {
-    if (e.target.classList.contains("remove-btn")) {
-      const index = parseInt(e.target.dataset.index);
-      cart.splice(index, 1);
-      sessionStorage.setItem("cart", JSON.stringify(cart));
-      location.reload(); // Simple reflow for now
-    }
-  });
-});
-
-// Cart page rendering
 document.addEventListener("DOMContentLoaded", () => {
   const cartContainer = document.getElementById("cart-container");
   const emptyCart = document.getElementById("empty-cart");
   const cartTotal = document.getElementById("cart-total");
   const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
 
-  if (emptyCart && cart.length === 0) {
-    emptyCart.style.display = "block";
+  if (cart.length === 0) {
+    if (emptyCart) emptyCart.style.display = "block";
     return;
   }
 
@@ -291,24 +214,28 @@ document.addEventListener("DOMContentLoaded", () => {
       <h3>${item.room}</h3>
       <p>${item.date} &nbsp; ${item.time} &nbsp; 👥 ${item.people}</p>
       <p>$${item.price} pp</p>
-      <button class="remove-btn" data-index="${index}">❌</button>
+      <img src="../images/cross.svg" class="remove-btn" data-index="${index}" alt="Remove booking" style="width: 20px; height: 20px; cursor: pointer; filter: brightness(0) saturate(100%) invert(59%) sepia(80%) saturate(1242%) hue-rotate(357deg) brightness(104%) contrast(98%);" />
     `;
     cartContainer?.appendChild(card);
   });
 
-  // Display total
   if (cartTotal) {
-    cartTotal.innerHTML = `<p style="margin-top: 2rem; font-weight: bold; font-family: baskerville; color: white;">Total: $${total}</p>`;
+    cartTotal.innerHTML = `
+      <p style="margin-top: 2rem; font-weight: bold; font-family: baskerville; color: white;">
+        Total: $${total}
+      </p>
+    `;
   }
 
-  // Remove logic
   cartContainer?.addEventListener("click", (e) => {
     if (e.target.classList.contains("remove-btn")) {
       const index = parseInt(e.target.dataset.index);
       cart.splice(index, 1);
       sessionStorage.setItem("cart", JSON.stringify(cart));
-      location.reload(); // To re-render updated cart and total
+      location.reload();
     }
   });
 });
+
+
 
