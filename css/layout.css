@@ -60,7 +60,7 @@
   padding: 0;
 }
 
-  .desktop-nav a {
+  .desktop-nav a.nav_buttons  {
   text-decoration: none;
   color: white;
   width: 130px;
@@ -77,6 +77,11 @@
   justify-content: center;
   align-items: center;
 }
+
+
+
+
+
 }
 
 @media (min-width: 768px) {
@@ -965,6 +970,35 @@
     margin-left: 7rem;
   }
 }
+
+
+/* Cart Page */
+
+.empty-cart-section {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f57c1f;
+  text-align: center;
+  padding-top: 5rem;
+}
+
+.cart-title {
+  font-size: 2.5rem;
+  font-family: 'AMORIA', serif;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.empty-cart-message {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: white;
+  font-family: 'baskerville', serif;
+}
+
 
 
 
