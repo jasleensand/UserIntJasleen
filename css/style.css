@@ -431,6 +431,10 @@ body.rooms-page , body.about-page {
   color: white;
 }
 
+.hidden {
+  display: none !important;
+}
+
 
 
 
