@@ -20,9 +20,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // Cart Setup
   const cartIndicator = document.getElementById("cart-icon-indicator");
   const desktopCartIcon = document.getElementById("desktop-cart-icon");
-  let cartCount = parseInt(sessionStorage.getItem("cartCount")) || 0;
+  const cartBadge = document.getElementById("cart-badge");
+  let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+  let cartCount = cart.length;
 
-  // Handle path difference for cart icon image
+  // Handle path difference
   const pathPrefix = location.pathname.includes("/sites/") ? "../" : "";
   const cartFullPath = `${pathPrefix}images/cartfull.svg`;
   const cartEmptyPath = `${pathPrefix}images/cart.svg`;
@@ -36,6 +38,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (cartCount > 0) {
       desktopCartIcon.classList.add("cart-full");
     }
+  }
+
+  if (cartBadge) {
+    cartBadge.textContent = cartCount;
+    cartBadge.style.display = cartCount > 0 ? "inline-block" : "none";
   }
 
   // Carousel Logic
@@ -67,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
     updateCards();
   }
 
-  // Calendar Setup
+  // Calendar Logic
   const calendarDates = document.getElementById("calendar-dates");
   const calendarMonth = document.getElementById("calendar-month");
   const prevBtn = document.getElementById("prev-month");
@@ -82,6 +89,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let currentMonthIndex = 0;
   const today = new Date();
+  let selectedDate = null;
+  let selectedTime = null;
 
   function generateCalendar() {
     if (!calendarDates || !calendarMonth) return;
@@ -183,19 +192,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Booking Logic
-  let selectedDate = null;
-  let selectedTime = null;
-
   const addToCartBtn = document.getElementById("add-to-cart");
   const confirmationMsg = document.getElementById("confirmation-message");
-  const cartBadge = document.getElementById("cart-badge");
-
-  if (cartBadge) {
-    cartBadge.textContent = cartCount;
-    if (cartCount > 0) {
-      cartBadge.style.display = "inline-block";
-    }
-  }
 
   function checkSelections() {
     if (selectedDate && selectedTime) {
@@ -206,28 +204,111 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   addToCartBtn?.addEventListener("click", () => {
-    confirmationMsg?.classList.add("visible");
-    setTimeout(() => {
-      confirmationMsg?.classList.remove("visible");
-    }, 3000);
+    // Save booking to cart
+    const booking = {
+      room: document.querySelector(".escape-title").textContent,
+      time: selectedTime,
+      date: selectedDate.toDateString(),
+      people: document.getElementById("people-dropdown").value,
+      price: 59
+    };
 
-    cartCount++;
-    sessionStorage.setItem("cartCount", cartCount);
+    let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+    cart.push(booking);
+    sessionStorage.setItem("cart", JSON.stringify(cart));
 
-    if (cartBadge) {
-      cartBadge.textContent = cartCount;
-      cartBadge.style.display = "inline-block";
+    // UI Feedback
+    if (confirmationMsg) {
+      confirmationMsg.classList.add("visible");
+      setTimeout(() => confirmationMsg.classList.remove("visible"), 3000);
     }
 
-    if (cartIndicator) {
-      cartIndicator.style.display = "inline-block";
-    }
-
+    if (cartIndicator) cartIndicator.style.display = "inline-block";
     if (desktopCartIcon) {
       desktopCartIcon.src = cartFullPath;
       desktopCartIcon.classList.add("cart-full");
     }
+
+    if (cartBadge) {
+      cartBadge.textContent = cart.length;
+      cartBadge.style.display = "inline-block";
+    }
+  });
+});
+
+// Cart page rendering
+document.addEventListener("DOMContentLoaded", () => {
+  const cartContainer = document.getElementById("cart-container");
+  const emptyCart = document.getElementById("empty-cart");
+  const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+
+  if (emptyCart && cart.length === 0) {
+    emptyCart.style.display = "block";
+    return;
+  }
+
+  cart.forEach((item, index) => {
+    const card = document.createElement("div");
+    card.className = "booking-card";
+    card.innerHTML = `
+      <h3>${item.room}</h3>
+      <p>${item.date} &nbsp; ${item.time} &nbsp; 👥 ${item.people}</p>
+      <p>$${item.price} pp</p>
+      <button class="remove-btn" data-index="${index}">❌</button>
+    `;
+    cartContainer?.appendChild(card);
   });
 
-  document.getElementById("people-dropdown")?.addEventListener("change", () => {});
+  cartContainer?.addEventListener("click", (e) => {
+    if (e.target.classList.contains("remove-btn")) {
+      const index = parseInt(e.target.dataset.index);
+      cart.splice(index, 1);
+      sessionStorage.setItem("cart", JSON.stringify(cart));
+      location.reload(); // Simple reflow for now
+    }
+  });
 });
+
+// Cart page rendering
+document.addEventListener("DOMContentLoaded", () => {
+  const cartContainer = document.getElementById("cart-container");
+  const emptyCart = document.getElementById("empty-cart");
+  const cartTotal = document.getElementById("cart-total");
+  const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+
+  if (emptyCart && cart.length === 0) {
+    emptyCart.style.display = "block";
+    return;
+  }
+
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    total += item.price * parseInt(item.people);
+    const card = document.createElement("div");
+    card.className = "booking-card";
+    card.innerHTML = `
+      <h3>${item.room}</h3>
+      <p>${item.date} &nbsp; ${item.time} &nbsp; 👥 ${item.people}</p>
+      <p>$${item.price} pp</p>
+      <button class="remove-btn" data-index="${index}">❌</button>
+    `;
+    cartContainer?.appendChild(card);
+  });
+
+  // Display total
+  if (cartTotal) {
+    cartTotal.innerHTML = `<p style="margin-top: 2rem; font-weight: bold; font-family: baskerville; color: white;">Total: $${total}</p>`;
+  }
+
+  // Remove logic
+  cartContainer?.addEventListener("click", (e) => {
+    if (e.target.classList.contains("remove-btn")) {
+      const index = parseInt(e.target.dataset.index);
+      cart.splice(index, 1);
+      sessionStorage.setItem("cart", JSON.stringify(cart));
+      location.reload(); // To re-render updated cart and total
+    }
+  });
+});
+
