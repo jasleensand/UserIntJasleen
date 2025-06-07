@@ -48,7 +48,7 @@ font-weight: 400;
 line-height: normal;
 }
 
-.explore-rooms h2 , .section-title, .details-btn, .reviews-title {
+.explore-rooms h2 , .section-title, .details-btn, .reviews-title, .cart-title {
 font-family: 'AMORIA', sans-serif;
 }
 
@@ -230,6 +230,12 @@ p{
 
 .add-to-cart-btn {
 
+  font-family: 'lemon_milk_med', sans-serif;
+  font-size: 18px;
+  
+}
+
+.empty-cart-message{
   font-family: 'lemon_milk_med', sans-serif;
   font-size: 18px;
   

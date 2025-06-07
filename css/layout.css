@@ -336,10 +336,12 @@
 .site-footer{
   background-color: #3e2b23;
   padding: 2rem 1rem;
+ 
 }
 
 .footer-container {
   display: flex;
+ 
   justify-content: space-between;
   align-items: flex-start;
   text-align: left;
@@ -532,7 +534,7 @@
   color: #f57c1f;
 }
 
-.nav_buttons:hover {
+ a.nav_buttons:hover {
   background-color: white;
   color: #f57c1f;
 }
@@ -975,28 +977,27 @@
 /* Cart Page */
 
 .empty-cart-section {
-  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #f57c1f;
   text-align: center;
-  padding-top: 5rem;
+  padding-top: 90px;
+  padding-bottom: 484px;
 }
 
 .cart-title {
-  font-size: 2.5rem;
-  font-family: 'AMORIA', serif;
+  font-size: 50px;
   color: white;
-  margin-bottom: 1rem;
+  margin-top: 40px;
 }
 
 .empty-cart-message {
   font-size: 0.9rem;
+  margin-top: 100px;
   font-weight: bold;
-  color: white;
-  font-family: 'baskerville', serif;
+  color: white;;
 }
 
 

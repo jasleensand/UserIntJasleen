@@ -20,7 +20,7 @@ body.rooms-page , body.about-page {
 }
 
 
-/* Desktop Nav */
+/*   Nav */
 .navbar {
   position: fixed;
   top: 0;
@@ -106,14 +106,17 @@ body.rooms-page , body.about-page {
  
 }
   .cart-icon {
-    height: 36px;
+    height: 28px;
     width: auto;
     margin-left: 1rem;
     margin-right: 1rem;
     cursor: pointer;
-    
   }
 
+  
+  .cart-icon.cart-full {
+  height: 42px; 
+}
 
 
 
