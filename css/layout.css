@@ -981,15 +981,20 @@
   align-items: center;
   background-color: #f57c1f;
   text-align: center;
-  padding-top: 90px;
-  padding-bottom: 484px;
+  padding-bottom: 368px;
+
 }
 
 .cart-title {
   font-size: 50px;
   color: white;
-  margin-top: 40px;
+  margin-top: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
 
 .empty-cart-message {
   font-size: 0.9rem;

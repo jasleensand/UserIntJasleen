@@ -412,6 +412,10 @@ body.rooms-page , body.about-page {
   text-align: center;
   font-family: 'baskerville';
   position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 300px;
+
 }
 
 .remove-btn {
