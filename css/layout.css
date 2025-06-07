@@ -341,7 +341,6 @@
 
 .footer-container {
   display: flex;
- 
   justify-content: space-between;
   align-items: flex-start;
   text-align: left;
@@ -975,7 +974,6 @@
 
 
 /* Cart Page */
-
 .empty-cart-section {
   display: flex;
   flex-direction: column;
@@ -997,8 +995,9 @@
   font-size: 0.9rem;
   margin-top: 100px;
   font-weight: bold;
-  color: white;;
+  color: white;
 }
+
 
 
 
