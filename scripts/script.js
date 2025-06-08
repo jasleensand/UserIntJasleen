@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
     mobileNav.classList.toggle("active");
   });
 
+  
   // --- Calendar Setup ---
   const calendarDates = document.getElementById("calendar-dates");
   const calendarMonth = document.getElementById("calendar-month");
@@ -229,4 +230,34 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   }
+
+  //  Index page Carousel Logic 
+const cards = document.querySelectorAll(".room-card");
+const cNextBtn = document.querySelector(".carousel-next");
+let currentIndex = 0;
+
+function updateCards() {
+  cards.forEach(card => card.classList.remove("active"));
+
+  if (window.innerWidth >= 768) {
+    const first = currentIndex % cards.length;
+    const second = (currentIndex + 1) % cards.length;
+    cards[first].classList.add("active");
+    cards[second].classList.add("active");
+  } else {
+    const index = currentIndex % cards.length;
+    cards[index].classList.add("active");
+  }
+}
+
+if (cards.length > 0 && cNextBtn) {
+  cNextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % cards.length;
+    updateCards();
+  });
+
+  window.addEventListener("resize", updateCards);
+  updateCards(); // Initial update
+}
+
 });
