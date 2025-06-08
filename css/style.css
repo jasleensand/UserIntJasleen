@@ -406,15 +406,16 @@ body.rooms-page , body.about-page {
 
 .booking-card {
   background: white;
-  padding: 1.5rem;
+  padding: 1.4rem;
   border-radius: 12px;
   color: #3e2b23;
   text-align: center;
-  font-family: 'baskerville';
+  font-family: 'lemon_milk_regular';
   position: relative;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 300px;
+  margin-left: 1.7rem;
+  margin-right: 1.7rem;
+  margin-top: 50px;
+  width: 338px;
 
 }
 
@@ -431,7 +432,7 @@ body.rooms-page , body.about-page {
 .cart-total-display {
   text-align: center;
   margin-top: 2rem;
-  font-size: 1.2rem;
+  font-size: 30rem;
   color: white;
 }
 

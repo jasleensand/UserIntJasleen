@@ -52,6 +52,10 @@ line-height: normal;
 font-family: 'AMORIA', sans-serif;
 }
 
+.cart-card-heading{
+  font-family: "LEMON_MILK_bold", sans-serif;
+}
+
 .section-title , .reviews-title, .escape-title, .about-title, .escape-info-title, .choose-us-title, .booking-heading{
 color: #FFF;
 text-align: center;
@@ -239,4 +243,12 @@ p{
   font-family: 'lemon_milk_med', sans-serif;
   font-size: 18px;
   
+}
+
+.total-cost{
+  font-weight: bold; 
+  font-size: 18px;
+  font-family: 'lemon_milk_med', sans-serif; 
+  color: white;
+ 
 }

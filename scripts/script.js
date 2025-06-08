@@ -203,8 +203,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const card = document.createElement("div");
         card.className = "booking-card";
         card.innerHTML = `
-          <h3>${item.room}</h3>
-          <p>${item.date} &nbsp; ${item.time} &nbsp; 👥 ${item.people}</p>
+          <h3 class = "cart-card-heading"> ${item.room}</h3>
+         <p>${item.date} &nbsp; ${item.time} &nbsp;
+            <img src="${pathPrefix}images/people.svg" alt="People icon" style="width: 40px; vertical-align: middle;" /> 
+            ${item.people}
+          </p>
           <p>$${item.price} pp</p>
           <img src="${pathPrefix}images/cross.svg" class="remove-btn" data-index="${index}" alt="Remove booking"
             style="width: 20px; height: 20px; cursor: pointer; filter: brightness(0) saturate(100%) invert(59%) sepia(80%) saturate(1242%) hue-rotate(357deg) brightness(104%) contrast(98%);" />
@@ -214,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (cartTotal) {
         cartTotal.innerHTML = `
-          <p style="margin-top: 2rem; font-weight: bold; font-family: baskerville; color: white;">
+          <p class = "total-cost"">
             Total: $${total}
           </p>
         `;
