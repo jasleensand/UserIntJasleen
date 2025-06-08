@@ -60,7 +60,7 @@
   padding: 0;
 }
 
-  .desktop-nav a.nav_buttons  {
+  .desktop-nav a.nav_buttons {
   text-decoration: none;
   color: white;
   width: 130px;
@@ -81,11 +81,9 @@
   background-color: white;
   color: #f57c1f;
 }
-
-
-
-
 }
+
+ 
 
 @media (min-width: 768px) {
   .values-list {
@@ -1023,7 +1021,7 @@ body.rooms-page {
 .total-cost{
   margin-top: 2rem; 
   text-align: right;
-  padding-right: 1.8rem;
+  padding-right: 2.6rem;
 }
 #cart-container {
   display: grid;
@@ -1034,7 +1032,8 @@ body.rooms-page {
 
 @media (min-width: 768px) {
   .total-cost{
-    padding-top: 5rem;
+    padding-top: 0rem;
+    padding-bottom: 0;
     padding-right: 4.7rem;
   }
    #cart-container {
@@ -1043,6 +1042,50 @@ body.rooms-page {
     gap: .8rem;
   }
 }
+
+.hidden {
+  display: none !important;
+}
+
+.cart-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  align-items: flex-end;
+  padding-bottom: 2rem;
+
+}
+
+.total-cost {
+  font-weight: bold;
+  color: white;
+  font-family: baskerville;
+  font-size: 1.2rem;
+}
+
+.checkout-btn {
+  background-color: transparent;
+  color: white;
+  width: 200px;
+  border: 1px solid white;
+  margin-top: 0 !important;; 
+  margin-right: 2.6rem;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-family: baskerville;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-btn:hover {
+  background-color: white;
+  color: #f57c1f;
+}
+
+  
+
+
+
+
 
 
 

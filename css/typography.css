@@ -250,7 +250,7 @@ p{
   font-size: 18px;
   font-family: 'lemon_milk_med', sans-serif; 
   color: white;
-  margin-bottom: 12rem;
+  margin-bottom: 2rem;
  
 }
 
@@ -262,4 +262,9 @@ p{
   font-family: 'lemon_milk_med', sans-serif;
 }
 
+
+.checkout-btn{
+  font-family: "lemon_milk_med", sans-serif;
+  font-size: 18px;
+}
 

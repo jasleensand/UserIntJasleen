@@ -412,8 +412,6 @@ body.rooms-page , body.about-page {
   text-align: center;
   font-family: 'lemon_milk_regular';
   position: relative;
-  margin-left: 1.7rem;
-  margin-right: 1.7rem;
   margin-top: 50px;
   width: 338px;
 
@@ -430,9 +428,7 @@ body.rooms-page , body.about-page {
 }
 
 .cart-total-display {
-  text-align: center;
-  margin-top: 2rem;
-  font-size: 30rem;
+  font-size: 1.2rem;
   color: white;
 }
 

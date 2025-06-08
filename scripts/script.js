@@ -189,10 +189,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const cartContainer = document.getElementById("cart-container");
   const emptyCart = document.querySelector(".empty-cart-section");
   const cartTotal = document.getElementById("cart-total");
+  const checkoutWrapper = document.getElementById("checkout-wrapper");
+
 
   if (cartContainer) {
     if (cart.length === 0) {
       emptyCart?.classList.remove("hidden");
+
     } else {
       emptyCart?.classList.add("hidden");
 
@@ -224,11 +227,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (cartTotal) {
         cartTotal.innerHTML = `
-          <p class = "total-cost"">
-            Total: $${total}
-          </p>
+          <p class = "total-cost"> Total: $${total} </p>
+          
         `;
+        
       }
+
+       checkoutWrapper?.classList.remove("hidden");
 
       cartContainer.addEventListener("click", (e) => {
         if (e.target.classList.contains("remove-btn")) {
