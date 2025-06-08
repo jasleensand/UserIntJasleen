@@ -250,5 +250,16 @@ p{
   font-size: 18px;
   font-family: 'lemon_milk_med', sans-serif; 
   color: white;
+  margin-bottom: 12rem;
  
 }
+
+.cart-date,
+.cart-time,
+.cart-people,
+.cart-price {
+  margin-bottom: 0.4rem;
+  font-family: 'lemon_milk_med', sans-serif;
+}
+
+

@@ -199,21 +199,28 @@ document.addEventListener("DOMContentLoaded", function () {
       let total = 0;
 
       cart.forEach((item, index) => {
-        total += item.price * parseInt(item.people);
-        const card = document.createElement("div");
-        card.className = "booking-card";
-        card.innerHTML = `
-          <h3 class = "cart-card-heading"> ${item.room}</h3>
-         <p>${item.date} &nbsp; ${item.time} &nbsp;
-            <img src="${pathPrefix}images/people.svg" alt="People icon" style="width: 40px; vertical-align: middle;" /> 
-            ${item.people}
-          </p>
-          <p>$${item.price} pp</p>
-          <img src="${pathPrefix}images/cross.svg" class="remove-btn" data-index="${index}" alt="Remove booking"
-            style="width: 20px; height: 20px; cursor: pointer; filter: brightness(0) saturate(100%) invert(59%) sepia(80%) saturate(1242%) hue-rotate(357deg) brightness(104%) contrast(98%);" />
-        `;
-        cartContainer.appendChild(card);
-      });
+  const subtotal = item.price * parseInt(item.people);
+  total += subtotal;
+
+  const card = document.createElement("div");
+  card.className = "booking-card";
+  card.innerHTML = `
+    <h3 class="cart-card-heading">${item.room}</h3>
+    <p class="cart-date">${item.date}</p>
+    <p class="cart-time">${item.time}</p>
+    <p class="cart-people">
+      <img src="${pathPrefix}images/people.svg" alt="People icon" style="width: 30px; vertical-align: middle;" />
+      ${item.people} player(s)
+    </p>
+    <p class="cart-price">
+      $${item.price} pp &nbsp; | &nbsp; Subtotal: $${subtotal}
+    </p>
+    <img src="${pathPrefix}images/cross.svg" class="remove-btn" data-index="${index}" alt="Remove booking"
+      style="width: 20px; height: 20px; cursor: pointer; filter: brightness(0) saturate(100%) invert(59%) sepia(80%) saturate(1242%) hue-rotate(357deg) brightness(104%) contrast(98%);" />
+  `;
+  cartContainer.appendChild(card);
+});
+
 
       if (cartTotal) {
         cartTotal.innerHTML = `
