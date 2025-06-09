@@ -1092,25 +1092,121 @@ body.rooms-page {
   color: #f57c1f;
 }
 
-  
 
+/*checkout form*/
 
+.checkout-section {
+  background-color: #f57c1f;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.progress-bar-wrapper {
+  margin-bottom: 2rem;
+}
 
+.checkout-form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 360px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
 
+.checkout-form.hidden {
+  display: none;
+}
 
+.form-heading {
+  font-family: 'AMORIA', sans-serif; 
+  color: #f57c1f;
+  margin-bottom: 1rem;
+  text-align: left;
+}
 
+.input-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
 
+.checkout-form input {
+  border: 1.5px solid #f57c1f;
+  padding: 0.6rem;
+  font-family: 'baskerville', serif;
+  font-size: 0.9rem;
+  border-radius: 5px;
+}
 
+.arrow-next,
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 1rem;
+}
 
+.arrow-next img,
+.form-actions img {
+  width: 40px;
+  height: 40px;
+}
 
+#complete-purchase {
+  background-color: transparent;
+  border: 1.5px solid #f57c1f;
+  color: #f57c1f;
+  padding: 0.6rem 1.5rem;
+  border-radius: 6px;
+  font-family: 'baskerville', serif;
+  font-size: 0.9rem;
+  margin-left: 1rem;
+  cursor: pointer;
+}
 
+#complete-purchase:hover {
+  background-color: white;
+  color: #f57c1f;
+}
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.4rem;
+}
 
+.input-group label {
+  font-family: 'baskerville', serif;
+  font-size: 0.7rem;
+  color: #f57c1f;
+  margin-bottom: 0.3rem;
+}
 
+.checkout-form input {
+  border: 1.5px solid #f57c1f;
+  padding: 0.6rem;
+  font-family: 'baskerville', serif;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  color: #3e2b23;
+  background-color: white;
+}
 
+.checkout-form input::placeholder {
+  color: #3e2b23;
+  opacity: 0.6;
+}
 
+.input-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
 
-
-
-
-
+.small-input input {
+  width: 120px;
+}

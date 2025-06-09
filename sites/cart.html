@@ -63,14 +63,91 @@
 <div class="cart-summary">
 <div id="cart-total" class="cart-total-display"></div>
 <div id="checkout-wrapper" class="hidden">
-  <a href="checkout.html" class="checkout-btn-link">
-    <button class="checkout-btn">CHECKOUT</button>
-  </a>
+  <button class="checkout-btn" id="show-checkout-form">CHECKOUT</button>
 </div>
 </div>
-
-
 </main>
+
+<section class="checkout-section hidden" id="checkout-section">
+  <!-- Progress Bar -->
+  <div class="progress-bar-wrapper">
+    <img src="../images/progressbar1.svg" alt="Progress" id="progress-bar" />
+  </div>
+
+  <!-- Step 1: Customer Details -->
+<form id="checkout-step1" class="checkout-form">
+  <h3 class="form-heading">customer details</h3>
+
+  <div class="input-group">
+    <label for="firstName">FIRST NAME</label>
+    <input type="text" id="firstName" name="firstName" required />
+  </div>
+
+  <div class="input-group">
+    <label for="lastName">LAST NAME</label>
+    <input type="text" id="lastName" name="lastName" required />
+  </div>
+
+  <div class="input-group">
+    <label for="phone">PHONE NUMBER</label>
+    <input type="tel" id="phone" name="phone" required />
+  </div>
+
+  <div class="input-group">
+    <label for="email">EMAIL</label>
+    <input type="email" id="email" name="email" required />
+  </div>
+
+  <div class="arrow-next">
+    <img src="../images/formarrow.svg" id="to-step2" alt="Next" style="cursor: pointer;" />
+  </div>
+</form>
+
+  <!-- Step 2: Payment Details -->
+<form id="checkout-step2" class="checkout-form hidden">
+  <h3 class="form-heading">payment details</h3>
+
+  <div class="input-group">
+    <label for="cardName">NAME ON CARD</label>
+    <input type="text" id="cardName" name="cardName" required />
+  </div>
+
+  <div class="input-group">
+    <label for="cardNumber">CARD NUMBER</label>
+    <input type="text" id="cardNumber" name="cardNumber" maxlength="19" required />
+  </div>
+
+  <div class="input-row">
+    <div class="input-group small-input">
+      <label for="expiry">MM/YY</label>
+      <input type="text" id="expiry" name="expiry" maxlength="5" required />
+    </div>
+    <div class="input-group small-input">
+      <label for="cvv">CVC</label>
+      <input type="text" id="cvv" name="cvv" maxlength="3" required />
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <img src="../images/formbackarrow.svg" id="to-step1" alt="Back" style="cursor: pointer;" />
+    <button type="submit" id="complete-purchase">complete purchase</button>
+  </div>
+</form>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
   
  <!--Footer-Brown-->
 <footer class="site-footer">

@@ -275,4 +275,62 @@ if (cards.length > 0 && cNextBtn) {
   updateCards(); // Initial update
 }
 
+
+
+const step1 = document.getElementById("checkout-step1");
+const step2 = document.getElementById("checkout-step2");
+const progressBar = document.getElementById("progress-bar");
+const showFormBtn = document.getElementById("show-checkout-form");
+const checkoutSection = document.getElementById("checkout-section");
+
+// Show checkout form when "CHECKOUT" is clicked
+if (showFormBtn && checkoutSection) {
+  showFormBtn.addEventListener("click", () => {
+    checkoutSection.classList.remove("hidden");
+
+    // Optional: scroll to form
+    window.scrollTo({
+      top: checkoutSection.offsetTop,
+      behavior: "smooth"
+    });
+  });
+}
+
+// Go to Step 2
+document.getElementById("to-step2")?.addEventListener("click", () => {
+  step1.classList.add("hidden");
+  step2.classList.remove("hidden");
+  progressBar.src = "../images/progressbar2.svg";
 });
+
+// Go back to Step 1
+document.getElementById("to-step1")?.addEventListener("click", () => {
+  step2.classList.add("hidden");
+  step1.classList.remove("hidden");
+  progressBar.src = "../images/progressbar1.svg";
+});
+
+// Final submission
+document.getElementById("complete-purchase")?.addEventListener("click", (e) => {
+  e.preventDefault();
+  window.location.href = "confirmation.html";
+});
+
+// Auto-format card number with spaces
+document.getElementById("cardNumber")?.addEventListener("input", function (e) {
+  let value = e.target.value.replace(/\D/g, "").substring(0, 16);
+  e.target.value = value.replace(/(.{4})/g, "$1 ").trim();
+});
+
+// Auto-insert slash for MM/YY
+document.getElementById("expiry")?.addEventListener("input", function (e) {
+  let val = e.target.value.replace(/\D/g, "").substring(0, 4);
+  if (val.length > 2) {
+    val = val.slice(0, 2) + "/" + val.slice(2);
+  }
+  e.target.value = val;
+});
+
+
+});
+
