@@ -337,6 +337,7 @@
 .site-footer{
   background-color: #3e2b23;
   padding: 2rem 1rem;
+  width: 100%;
  
 }
 
@@ -1107,9 +1108,6 @@ body.rooms-page {
   align-items: center;
 }
 
-.progress-bar-wrapper {
-  margin-bottom: 2rem;
-}
 
 .checkout-form {
   background-color: white;
@@ -1237,5 +1235,33 @@ body.rooms-page {
   color: #f57c1f;
 }
 
+.progress-bar-desktop {
+  margin-bottom: 2rem;
+  display: none;
+}
+
+
+.progress-bar-mobile {
+  display: block;
+  width: 100%;
+  padding: 1rem 0;
+  text-align: center;
+ 
+}
+
+.progress-bar-mobile img {
+  width: 90%;
+  max-width: 320px;
+}
+
+/* Show desktop progress bar only on larger screens */
+@media (min-width: 768px) {
+  .progress-bar-desktop {
+    display: block;
+  }
+  .progress-bar-mobile {
+    display: none;
+  }
+}
 
 

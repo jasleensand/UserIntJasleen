@@ -275,54 +275,51 @@ if (cards.length > 0 && cNextBtn) {
   updateCards(); // Initial update
 }
 
-
-
 const step1 = document.getElementById("checkout-step1");
 const step2 = document.getElementById("checkout-step2");
-const progressBar = document.getElementById("progress-bar");
 const showFormBtn = document.getElementById("show-checkout-form");
 const checkoutSection = document.getElementById("checkout-section");
+
+const progressBarDesktop = document.getElementById("progress-bar-desktop");
+const progressBarMobile = document.getElementById("progress-bar-mobile");
 
 // Show checkout form when "CHECKOUT" is clicked
 if (showFormBtn && checkoutSection) {
   showFormBtn.addEventListener("click", () => {
     checkoutSection.classList.remove("hidden");
-
-    // Optional: scroll to form
-    window.scrollTo({
-      top: checkoutSection.offsetTop,
-      behavior: "smooth"
-    });
+    window.scrollTo({ top: checkoutSection.offsetTop, behavior: "smooth" });
   });
 }
 
-
-// Go back to Step 1
-document.getElementById("to-step1")?.addEventListener("click", () => {
-  step2.classList.add("hidden");
-  step1.classList.remove("hidden");
-  progressBar.src = "../images/progressbar1.svg";
-});
-
-
-// updates progress bar
+// Go to Step 2
 document.getElementById("to-step2")?.addEventListener("click", function () {
   const step1Form = document.getElementById("checkout-step1");
+  const step2Form = document.getElementById("checkout-step2");
+
   if (step1Form.checkValidity()) {
     step1Form.classList.add("hidden");
-    document.getElementById("checkout-step2").classList.remove("hidden");
+    step2Form.classList.remove("hidden");
 
-    //this updates the progress bar
-    document.getElementById("progress-bar").src = "../images/progressbar2.svg";
+    document.getElementById("purchase-wrapper").classList.add("visible");
+
+    if (progressBarDesktop) progressBarDesktop.src = "../images/progressbar2.svg";
+    if (progressBarMobile) progressBarMobile.src = "../images/mobileprogress2.svg";
   } else {
     step1Form.reportValidity();
   }
 });
 
+// Go back to Step 1
+document.getElementById("to-step1")?.addEventListener("click", function () {
+  step2.classList.add("hidden");
+  step1.classList.remove("hidden");
+  document.getElementById("purchase-wrapper").classList.remove("visible");
 
+  if (progressBarDesktop) progressBarDesktop.src = "../images/progressbar1.svg";
+  if (progressBarMobile) progressBarMobile.src = "../images/mobileprogress1.svg";
+});
 
-
-// Auto-format card number with spaces
+// Auto-format card number
 document.getElementById("cardNumber")?.addEventListener("input", function (e) {
   let value = e.target.value.replace(/\D/g, "").substring(0, 16);
   e.target.value = value.replace(/(.{4})/g, "$1 ").trim();
@@ -337,32 +334,9 @@ document.getElementById("expiry")?.addEventListener("input", function (e) {
   e.target.value = val;
 });
 
-// Show Step 2 only if Step 1 is valid
-  document.getElementById("to-step2").addEventListener("click", function () {
-  const step1Form = document.getElementById("checkout-step1");
-  const step2Form = document.getElementById("checkout-step2");
-
-  if (step1Form.checkValidity()) {
-    step1Form.classList.add("hidden");
-    step2Form.classList.remove("hidden");
-
-    document.getElementById("purchase-wrapper").classList.add("visible");
-    document.getElementById("progress-bar").src = "../images/progressbar2.svg";
-  } else {
-    step1Form.reportValidity();
-  }
-});
-
-// Go back to Step 1
-  document.getElementById("to-step1").addEventListener("click", function () {
-  document.getElementById("checkout-step2").classList.add("hidden");
-  document.getElementById("checkout-step1").classList.remove("hidden");
-  document.getElementById("purchase-wrapper").classList.remove("visible");
-  document.getElementById("progress-bar").src = "../images/progressbar1.svg";
-});
-
-  // Form 2 validation and error display
-  const step2Form = document.getElementById("checkout-step2");
+// Form 2 validation and error message
+const step2Form = document.getElementById("checkout-step2");
+if (step2Form) {
   const errorMessage = document.createElement("p");
   errorMessage.id = "form-error";
   errorMessage.style.color = "red";
@@ -373,13 +347,11 @@ document.getElementById("expiry")?.addEventListener("input", function (e) {
   step2Form.addEventListener("submit", function (e) {
     if (!step2Form.checkValidity()) {
       e.preventDefault();
-      errorMessage.textContent = "please ensure all fields are filled in correctly.";
+      errorMessage.textContent = "Please ensure all fields are filled in correctly.";
       step2Form.reportValidity();
     } else {
-      errorMessage.textContent = ""; // clear error if valid
+      errorMessage.textContent = "";
     }
   });
-
-
+}
 });
-
