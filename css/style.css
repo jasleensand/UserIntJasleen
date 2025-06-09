@@ -33,7 +33,7 @@ body.rooms-page , body.about-page {
   justify-content: space-between;
   z-index: 1000;
   background: transparent;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .navbar.scrolled {
@@ -224,7 +224,7 @@ body.rooms-page , body.about-page {
   padding: 10px 30px;
   margin: 0 10px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
 
 .tab-button:hover,
@@ -247,7 +247,7 @@ body.rooms-page , body.about-page {
   border-radius: 17px;
   padding: 10px 20px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
 
 .time-button:hover,
@@ -307,7 +307,7 @@ body.rooms-page , body.about-page {
   border-radius: 16px;
   margin-top: 2rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease-in-out;
   display: flex;
   justify-content: center;
 }
@@ -334,7 +334,7 @@ body.rooms-page , body.about-page {
 }
 
 
-/*mobile cart numbe of bookings */
+/*mobile cart number of bookings */
 .cart-link {
   position: relative;
 }
@@ -398,10 +398,10 @@ body.rooms-page , body.about-page {
 
 .cart-bookings {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   padding: 2rem;
-  padding-right: 10px;
+  justify-content: center; 
 }
 
 .booking-card {
@@ -434,6 +434,15 @@ body.rooms-page , body.about-page {
 .hidden {
   display: none !important;
 }
+
+#progress-bar {
+  width: 700px;     
+  display: block;
+  margin: 0 auto; 
+}
+
+
+
 
 
 
