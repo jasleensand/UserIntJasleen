@@ -305,6 +305,21 @@ document.getElementById("to-step1")?.addEventListener("click", () => {
 });
 
 
+// updates progress bar
+document.getElementById("to-step2")?.addEventListener("click", function () {
+  const step1Form = document.getElementById("checkout-step1");
+  if (step1Form.checkValidity()) {
+    step1Form.classList.add("hidden");
+    document.getElementById("checkout-step2").classList.remove("hidden");
+
+    //this updates the progress bar
+    document.getElementById("progress-bar").src = "../images/progressbar2.svg";
+  } else {
+    step1Form.reportValidity();
+  }
+});
+
+
 
 
 // Auto-format card number with spaces
@@ -321,23 +336,30 @@ document.getElementById("expiry")?.addEventListener("input", function (e) {
   }
   e.target.value = val;
 });
- // Show Step 2 only if Step 1 is valid
-  document.getElementById("to-step2").addEventListener("click", function () {
-    const step1Form = document.getElementById("checkout-step1");
-    if (step1Form.checkValidity()) {
-      step1Form.classList.add("hidden");
-      document.getElementById("checkout-step2").classList.remove("hidden");
-    } else {
-      step1Form.reportValidity();
-    }
-  });
 
-  // Back to Step 1
+// Show Step 2 only if Step 1 is valid
+  document.getElementById("to-step2").addEventListener("click", function () {
+  const step1Form = document.getElementById("checkout-step1");
+  const step2Form = document.getElementById("checkout-step2");
+
+  if (step1Form.checkValidity()) {
+    step1Form.classList.add("hidden");
+    step2Form.classList.remove("hidden");
+
+    document.getElementById("purchase-wrapper").classList.add("visible");
+    document.getElementById("progress-bar").src = "../images/progressbar2.svg";
+  } else {
+    step1Form.reportValidity();
+  }
+});
+
+// Go back to Step 1
   document.getElementById("to-step1").addEventListener("click", function () {
-    document.getElementById("checkout-step2").classList.add("hidden");
-    document.getElementById("checkout-step1").classList.remove("hidden");
-    document.getElementById("form-error").textContent = ""; // clear error
-  });
+  document.getElementById("checkout-step2").classList.add("hidden");
+  document.getElementById("checkout-step1").classList.remove("hidden");
+  document.getElementById("purchase-wrapper").classList.remove("visible");
+  document.getElementById("progress-bar").src = "../images/progressbar1.svg";
+});
 
   // Form 2 validation and error display
   const step2Form = document.getElementById("checkout-step2");

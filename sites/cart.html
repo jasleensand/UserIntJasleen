@@ -89,7 +89,7 @@
 
   <div class="input-group">
     <label for="phone">PHONE NUMBER</label>
-    <input type="tel" id="phone" name="phone" pattern="\d{8,15}" title="Enter a valid phone number" required />
+    <input type="tel" id="phone" name="phone" pattern="\d{8,15}" maxlength="10" title="Enter a valid phone number" required />
   </div>
 
   <div class="input-group">
@@ -128,13 +128,18 @@
   </div>
 
   <div class="form-actions">
-    <img src="../images/formbackarrow.svg" id="to-step1" alt="Back" style="cursor: pointer;" />
-    <button type="submit" id="complete-purchase">complete purchase</button>
+    <img src="../images/formbackarrow.svg"  class= "page1arrow" id="to-step1" alt="Back" style="cursor: pointer;" />
   </div>
 </form>
 
+ <div class="form-submit" id="purchase-wrapper">
+  <button type="submit" id="complete-purchase" form="checkout-step2">COMPLETE PURCHASE</button>
+</div>
 
 </section>
+
+
+
 
 
 

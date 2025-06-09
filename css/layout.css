@@ -179,7 +179,7 @@
   font-size: 28px;
 }
 
-.details-btn {
+.details-btn{
   margin-top: 30px;
   margin-bottom: 9px;
   background-color: transparent;
@@ -1027,7 +1027,8 @@ body.rooms-page {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  padding: 2rem;
+  padding-top: 2rem;
+  padding: 2.0rem
 }
 
 .cart-summary {
@@ -1143,36 +1144,20 @@ body.rooms-page {
   border-radius: 5px;
 }
 
-.arrow-next,
-.form-actions {
+.arrow-next {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-top: 1rem;
 }
 
 .arrow-next img,
-.form-actions img {
+.form-actions img{
   width: 40px;
   height: 40px;
 }
 
-#complete-purchase {
-  background-color: transparent;
-  border: 1.5px solid #f57c1f;
-  color: #f57c1f;
-  padding: 0.6rem 1.5rem;
-  border-radius: 6px;
-  font-family: 'baskerville', serif;
-  font-size: 0.9rem;
-  margin-left: 1rem;
-  cursor: pointer;
-}
 
-#complete-purchase:hover {
-  background-color: white;
-  color: #f57c1f;
-}
+
 .input-group {
   display: flex;
   flex-direction: column;
@@ -1210,3 +1195,44 @@ body.rooms-page {
 .small-input input {
   width: 120px;
 }
+
+
+
+.page1arrow {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.form-submit {
+  display: none;
+  justify-content: center;   
+  margin-top: 2rem;
+}
+
+.form-submit.visible {
+  display: flex;
+}
+
+.form-submit button {
+  padding: 0.8rem 2rem;
+  font-size: 17px;
+  border: 1px solid white;
+  border-radius: 12px;
+  background-color: #f57c1f;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-weight: bold;
+  max-width: 320px;
+  width: 100%;         
+  text-align: center;
+}
+
+.form-submit button:hover {
+  background-color: white;
+  color: #f57c1f;
+}
+
+
+
