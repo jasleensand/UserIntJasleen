@@ -48,7 +48,7 @@ font-weight: 400;
 line-height: normal;
 }
 
-.explore-rooms h2 , .section-title, .details-btn, .reviews-title, .cart-title {
+.explore-rooms h2 , .section-title, .reviews-title, .cart-title {
 font-family: 'AMORIA', sans-serif;
 }
 
@@ -117,13 +117,17 @@ p{
     text-transform: uppercase;
 }
 
-.room-details-btn{
+.room-details-btn, .details-btn{
+    text-decoration: none;
     margin-top: 25px;
     font-size: 18px;
     font-family: 'LEMON_MILK_med';
     color: #FFF;
     text-transform: uppercase;
+    width: 250px;
 }
+
+
 
 
 .more-rooms-text {
