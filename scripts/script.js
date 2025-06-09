@@ -296,12 +296,6 @@ if (showFormBtn && checkoutSection) {
   });
 }
 
-// Go to Step 2
-document.getElementById("to-step2")?.addEventListener("click", () => {
-  step1.classList.add("hidden");
-  step2.classList.remove("hidden");
-  progressBar.src = "../images/progressbar2.svg";
-});
 
 // Go back to Step 1
 document.getElementById("to-step1")?.addEventListener("click", () => {
@@ -310,11 +304,8 @@ document.getElementById("to-step1")?.addEventListener("click", () => {
   progressBar.src = "../images/progressbar1.svg";
 });
 
-// Final submission
-document.getElementById("complete-purchase")?.addEventListener("click", (e) => {
-  e.preventDefault();
-  window.location.href = "confirmation.html";
-});
+
+
 
 // Auto-format card number with spaces
 document.getElementById("cardNumber")?.addEventListener("input", function (e) {
@@ -330,6 +321,42 @@ document.getElementById("expiry")?.addEventListener("input", function (e) {
   }
   e.target.value = val;
 });
+ // Show Step 2 only if Step 1 is valid
+  document.getElementById("to-step2").addEventListener("click", function () {
+    const step1Form = document.getElementById("checkout-step1");
+    if (step1Form.checkValidity()) {
+      step1Form.classList.add("hidden");
+      document.getElementById("checkout-step2").classList.remove("hidden");
+    } else {
+      step1Form.reportValidity();
+    }
+  });
+
+  // Back to Step 1
+  document.getElementById("to-step1").addEventListener("click", function () {
+    document.getElementById("checkout-step2").classList.add("hidden");
+    document.getElementById("checkout-step1").classList.remove("hidden");
+    document.getElementById("form-error").textContent = ""; // clear error
+  });
+
+  // Form 2 validation and error display
+  const step2Form = document.getElementById("checkout-step2");
+  const errorMessage = document.createElement("p");
+  errorMessage.id = "form-error";
+  errorMessage.style.color = "red";
+  errorMessage.style.marginTop = "1rem";
+  errorMessage.style.fontSize = "0.9rem";
+  step2Form.appendChild(errorMessage);
+
+  step2Form.addEventListener("submit", function (e) {
+    if (!step2Form.checkValidity()) {
+      e.preventDefault();
+      errorMessage.textContent = "please ensure all fields are filled in correctly.";
+      step2Form.reportValidity();
+    } else {
+      errorMessage.textContent = ""; // clear error if valid
+    }
+  });
 
 
 });

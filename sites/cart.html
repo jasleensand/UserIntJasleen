@@ -73,24 +73,23 @@
   <div class="progress-bar-wrapper">
     <img src="../images/progressbar1.svg" alt="Progress" id="progress-bar" />
   </div>
-
-  <!-- Step 1: Customer Details -->
+<!-- Step 1: Customer Details -->
 <form id="checkout-step1" class="checkout-form">
   <h3 class="form-heading">customer details</h3>
 
   <div class="input-group">
     <label for="firstName">FIRST NAME</label>
-    <input type="text" id="firstName" name="firstName" required />
+    <input type="text" id="firstName" name="firstName" pattern="[A-Za-z\s\-]+" title="Letters only" required />
   </div>
 
   <div class="input-group">
     <label for="lastName">LAST NAME</label>
-    <input type="text" id="lastName" name="lastName" required />
+    <input type="text" id="lastName" name="lastName" pattern="[A-Za-z\s\-]+" title="Letters only" required />
   </div>
 
   <div class="input-group">
     <label for="phone">PHONE NUMBER</label>
-    <input type="tel" id="phone" name="phone" required />
+    <input type="tel" id="phone" name="phone" pattern="\d{8,15}" title="Enter a valid phone number" required />
   </div>
 
   <div class="input-group">
@@ -103,28 +102,28 @@
   </div>
 </form>
 
-  <!-- Step 2: Payment Details -->
-<form id="checkout-step2" class="checkout-form hidden">
+<!-- Step 2: Payment Details -->
+<form id="checkout-step2" class="checkout-form hidden" action="confirmation.html" method="GET">
   <h3 class="form-heading">payment details</h3>
 
   <div class="input-group">
     <label for="cardName">NAME ON CARD</label>
-    <input type="text" id="cardName" name="cardName" required />
+    <input type="text" id="cardName" name="cardName" pattern="[A-Za-z\s\-]+" title="Letters only" required />
   </div>
 
   <div class="input-group">
     <label for="cardNumber">CARD NUMBER</label>
-    <input type="text" id="cardNumber" name="cardNumber" maxlength="19" required />
+    <input type="text" id="cardNumber" name="cardNumber" inputmode="numeric" pattern="(?:\d{4} ?){4}" maxlength="19" title="Enter a valid card number (e.g. 1234 5678 9012 3456)" required />
   </div>
 
   <div class="input-row">
     <div class="input-group small-input">
       <label for="expiry">MM/YY</label>
-      <input type="text" id="expiry" name="expiry" maxlength="5" required />
+      <input type="text" id="expiry" name="expiry" inputmode="numeric" pattern="(0[1-9]|1[0-2])\/\d{2}" maxlength="5" title="Format: MM/YY" required />
     </div>
     <div class="input-group small-input">
       <label for="cvv">CVC</label>
-      <input type="text" id="cvv" name="cvv" maxlength="3" required />
+      <input type="text" id="cvv" name="cvv" inputmode="numeric" pattern="\d{3,4}" maxlength="4" title="Enter a valid CVC" required />
     </div>
   </div>
 

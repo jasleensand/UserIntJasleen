@@ -173,7 +173,7 @@ p{
 
 .escape-info-description, .choose-title{
     color: white;
-    font-family: 'lemon_milk_regular';
+    font-family: 'LEMON_MILK_reg';
     font-size: 18px;
     text-align: center;
 }
@@ -272,3 +272,20 @@ p{
   font-size: 18px;
 }
 
+/*cart*/
+
+.form-heading{
+  font-size: 30px;
+  text-align: center;
+}
+
+.input-group label{
+  font-family: "LEMON_MILK_regular";
+  font-size: 14px;
+}
+
+.input-group input{
+  font-family:"LEMON_MILK_regular" ;
+  color: black;
+  font-size: 14px;
+}
