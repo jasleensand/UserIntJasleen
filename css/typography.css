@@ -294,3 +294,18 @@ p{
   font-family: "LEMON_MILK_med";
 } 
 
+.confirmation-message{
+  font-size: 20px;
+}
+.confirmation-messages{
+  font-size: 20px;
+}
+.see-you-text{
+font-size: 25px;
+}
+.see-you-company{
+  margin-top: 0;
+  font-family: 'Amoria';
+  font-size: 34px;
+  color: #f57c1f;
+}

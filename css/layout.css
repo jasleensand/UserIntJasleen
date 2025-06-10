@@ -1288,3 +1288,50 @@ body.rooms-page {
     margin-top: 40px;
   }
 }
+
+.confirmation-message-wrapper {
+  text-align: center;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.confirmation-box {
+  background-color: #f57c1f;
+  color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 350px;
+  font-family: 'baskerville', sans-serif;
+  font-weight: bold;
+}
+
+.confirmation-title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.confirmation-text {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.confirmation-star {
+  width: 40px;
+  height: auto;
+}
+
+.see-you-text {
+  font-family: 'lemon_milk_med';
+  color: #f57c1f;
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+
+.confirmation-messages{
+  margin-top: 5rem;
+}
+
+
