@@ -1264,4 +1264,27 @@ body.rooms-page {
   }
 }
 
+/*confirmation page */
 
+.confirmation-title{
+  margin-top: 12rem;
+}
+
+.navbar{
+  background-color: #f57c1f;
+}
+.complete-bar-desktop{
+  display:none;
+}
+
+
+@media (min-width: 768px) {
+  .complete-bar-desktop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    margin: 0 auto; 
+    margin-top: 40px;
+  }
+}

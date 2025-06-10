@@ -354,4 +354,13 @@ if (step2Form) {
     }
   });
 }
+//emptys cart when on confirmation page
+document.getElementById("complete-purchase")?.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  sessionStorage.removeItem("cart");
+
+  window.location.href = "confirmation.html";
+});
+
 });
