@@ -35,10 +35,19 @@ body.rooms-page , body.about-page {
   background: transparent;
   transition: background-color 0.3s ease-in-out;
 }
+.desktop-nav {
+  z-index: 900;
+}
 
 .navbar.scrolled {
   background-color: #f57c1f; 
 }
+
+.logo-link {
+  position: relative;
+  z-index: 1100;
+}
+
 
 .logo {
   height: 50px;
@@ -486,9 +495,6 @@ body.rooms-page , body.about-page {
 .confirmation-nav{
   background-color: #f57c1f;
 }
-
-
-
 
 
 
