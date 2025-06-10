@@ -338,6 +338,7 @@
   background-color: #3e2b23;
   padding: 2rem 1rem;
   width: 100%;
+  margin: 0px;
  
 }
 
@@ -1480,3 +1481,49 @@ body.rooms-page {
   }
 
 }
+
+.blogPost-body {
+  background-color: #f57c1f;
+  margin: 0;
+  
+}
+
+.blog-post-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 1rem;
+  min-height: 100vh;
+}
+
+.blog-post-container {
+  background-color: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  line-height: 1.6;
+}
+
+.blog-post-container h2 {
+  margin-top: 0;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.blog-post-container h3 {
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  color: #444;
+}
+
+.blog-post-container ul {
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.blog-post-container li {
+  margin-bottom: 0.5rem;
+}
+

@@ -276,7 +276,7 @@ if (cards.length > 0 && cNextBtn) {
   updateCards(); // Initial
 }
 
-
+//checkout process
 const step1 = document.getElementById("checkout-step1");
 const step2 = document.getElementById("checkout-step2");
 const showFormBtn = document.getElementById("show-checkout-form");
@@ -336,34 +336,29 @@ document.getElementById("expiry")?.addEventListener("input", function (e) {
   e.target.value = val;
 });
 
-// Form 2 validation and error message
-const step2Form = document.getElementById("checkout-step2");
-if (step2Form) {
-  const errorMessage = document.createElement("p");
-  errorMessage.id = "form-error";
-  errorMessage.style.color = "red";
-  errorMessage.style.marginTop = "1rem";
-  errorMessage.style.fontSize = "0.9rem";
-  step2Form.appendChild(errorMessage);
 
-  step2Form.addEventListener("submit", function (e) {
-    if (!step2Form.checkValidity()) {
-      e.preventDefault();
+
+//empties cart when on confirmation page
+document.getElementById("complete-purchase")?.addEventListener("click", (e) => {
+  const step2Form = document.getElementById("checkout-step2");
+  const errorMessage = document.getElementById("form-error");
+
+  if (!step2Form.checkValidity()) {
+    e.preventDefault();
+    if (errorMessage) {
       errorMessage.textContent = "Please ensure all fields are filled in correctly.";
-      step2Form.reportValidity();
-    } else {
+    }
+    step2Form.reportValidity(); // triggers native browser tooltip
+  } else {
+    e.preventDefault(); // stop native form action
+    if (errorMessage) {
       errorMessage.textContent = "";
     }
-  });
-}
-//emptys cart when on confirmation page
-document.getElementById("complete-purchase")?.addEventListener("click", (e) => {
-  e.preventDefault();
-
-  sessionStorage.removeItem("cart");
-
-  window.location.href = "confirmation.html";
+    sessionStorage.removeItem("cart");
+    window.location.href = "confirmation.html";
+  }
 });
+
 
 //blog page 
 const blogCards = document.querySelectorAll(".blog-card");
