@@ -444,8 +444,15 @@ body.rooms-page , body.about-page {
 
 /*confirmation page*/
 
+.confirmation-page{
+  background-color: white;
+}
+
+
+
+
 .scrolling-banner-wrapper {
-  height: 70px; /* Adjust based on tile height */
+  height: 70px; 
   background-image: url('../images/star-tile.svg');
   background-repeat: repeat-x;
   background-size: auto 100%; 
@@ -469,6 +476,16 @@ body.rooms-page , body.about-page {
   
 }
 
+@media (max-width: 480px) {
+  .scrolling-banner-wrapper {
+    animation-duration: 4s;
+  }
+}
+
+
+.confirmation-nav{
+  background-color: #f57c1f;
+}
 
 
 

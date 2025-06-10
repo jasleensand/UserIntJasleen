@@ -265,6 +265,7 @@ function updateCards() {
   }
 }
 
+
 if (cards.length > 0 && cNextBtn) {
   cNextBtn.addEventListener("click", () => {
     currentIndex = (currentIndex + 1) % cards.length;

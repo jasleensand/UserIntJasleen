@@ -163,6 +163,8 @@ p{
     line-height: normal;
 }
 
+
+
 .keyword{
     color: #f57c1f;
     text-align: center;
@@ -173,7 +175,7 @@ p{
 
 .escape-info-description, .choose-title{
     color: white;
-    font-family: 'LEMON_MILK_reg';
+    font-family: 'LEMON_MILK_med';
     font-size: 18px;
     text-align: center;
 }

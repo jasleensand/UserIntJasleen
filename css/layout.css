@@ -1008,6 +1008,7 @@ body.rooms-page {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  
 }
 
 .cart-main {
@@ -1272,9 +1273,8 @@ body.rooms-page {
   margin-top: 12rem;
 }
 
-.navbar{
-  background-color: #f57c1f;
-}
+
+
 .complete-bar-desktop{
   display:none;
 }
@@ -1335,5 +1335,6 @@ body.rooms-page {
 .confirmation-messages{
   margin-top: 5rem;
 }
+
 
 
