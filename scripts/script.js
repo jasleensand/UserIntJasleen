@@ -365,4 +365,28 @@ document.getElementById("complete-purchase")?.addEventListener("click", (e) => {
   window.location.href = "confirmation.html";
 });
 
+//blog page 
+const blogCards = document.querySelectorAll(".blog-card");
+  const showMoreBtn = document.getElementById("show-more-btn");
+
+  let visibleCount = 3;
+
+  function updateVisibleCards() {
+    blogCards.forEach((card, index) => {
+      if (index < visibleCount) {
+        card.classList.add("visible");
+      }
+    });
+
+    if (visibleCount >= blogCards.length) {
+      showMoreBtn.style.display = "none";
+    }
+  }
+
+  showMoreBtn.addEventListener("click", () => {
+    visibleCount += 2; // Show 2 more at a time
+    updateVisibleCards();
+  });
+
+  updateVisibleCards(); 
 });

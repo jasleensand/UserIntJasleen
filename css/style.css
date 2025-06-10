@@ -492,9 +492,10 @@ body.rooms-page , body.about-page {
 }
 
 
-.confirmation-nav{
+.confirmation-nav, .blog-body{
   background-color: #f57c1f;
 }
+
 
 
 

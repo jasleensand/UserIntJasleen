@@ -56,7 +56,7 @@ font-family: 'AMORIA', sans-serif;
   font-family: "LEMON_MILK_bold", sans-serif;
 }
 
-.section-title , .reviews-title, .escape-title, .about-title, .escape-info-title, .choose-us-title, .booking-heading, .confirmation-title{
+.section-title , .reviews-title, .escape-title, .about-title, .escape-info-title, .choose-us-title, .booking-heading, .confirmation-title, .blog-title{
 color: #FFF;
 text-align: center;
 font-family: 'AMORIA', sans-serif;
@@ -310,4 +310,14 @@ font-size: 25px;
   font-family: 'Amoria';
   font-size: 34px;
   color: #f57c1f;
+}
+
+.blog-card{
+  font-family: 'LEMON_MILK_med';
+  font-size: 22px;
+}
+
+.blog-btn{
+  font-size: 20px;
+  font-family: 'Amoria';
 }

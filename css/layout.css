@@ -179,7 +179,7 @@
   font-size: 28px;
 }
 
-.details-btn{
+.details-btn, .blog-btn{
   margin-top: 30px;
   margin-bottom: 9px;
   background-color: transparent;
@@ -1334,6 +1334,101 @@ body.rooms-page {
 
 .confirmation-messages{
   margin-top: 5rem;
+}
+
+/*Blog Page */
+.blog-section {
+  padding: 2rem 1.5rem;
+  background-color: #f57c1f;
+  justify-content: center;
+}
+
+.blog-title {
+  text-align: center;
+  font-family: var(--display-font);
+  font-size: 2rem;
+  margin-top: 5rem;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+#blog-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.blog-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 12px;
+  padding-left: 1.7rem;
+  padding-right: 1.7rem;
+  width: 330px;
+  height: 300px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card.two .blog-btn{
+  border-color: #f57c1f;
+  color: #f57c1f;
+}
+
+.blog-btn{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 1.5px;
+    width: 200px;
+}
+
+.blog-btn:hover{
+  background-color: #FFF;
+  color: #3e2b23;
+}
+
+.blog-card.two .blog-btn:hover{
+  background-color: #f57c1f;
+  color: #FFF;
+}
+
+.one{
+  background-color:#3e2b23 ;
+  color: #FFF;
+}
+
+.two{
+  background-color: #FFF;
+  color: #f57c1f;
+}
+.blog-card.visible {
+  display: flex;
+}
+
+.show-more-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+#show-more-btn {
+  width: 45px;
+  height: 45px;
+  rotate: 90deg;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#show-more-btn:hover {
+  transform: scale(1.1);
 }
 
 
