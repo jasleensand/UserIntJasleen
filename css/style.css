@@ -444,10 +444,30 @@ body.rooms-page , body.about-page {
 
 /*confirmation page*/
 
-.confirmation-section{
-  background-color: white;
+.scrolling-banner-wrapper {
+  height: 70px; /* Adjust based on tile height */
+  background-image: url('../images/star-tile.svg');
+  background-repeat: repeat-x;
+  background-size: auto 100%; 
+  animation: scroll-bg 20s linear infinite;
+  overflow: hidden;
+  border: none;
+  outline: none;
 }
 
+@keyframes scroll-bg {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: -100%;
+  }
+}
+
+.banner-message-wrapper{
+  background-color: white;
+  
+}
 
 
 

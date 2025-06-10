@@ -256,7 +256,7 @@ function updateCards() {
 
   if (window.innerWidth >= 768) {
     const first = currentIndex % cards.length;
-    const second = (currentIndex + 1) % cards.length;
+    const second = (first + 1) % cards.length;
     cards[first].classList.add("active");
     cards[second].classList.add("active");
   } else {
@@ -272,8 +272,9 @@ if (cards.length > 0 && cNextBtn) {
   });
 
   window.addEventListener("resize", updateCards);
-  updateCards(); // Initial update
+  updateCards(); // Initial
 }
+
 
 const step1 = document.getElementById("checkout-step1");
 const step2 = document.getElementById("checkout-step2");

@@ -528,6 +528,8 @@
   text-align: center;
   padding: .5rem 1rem;
   padding-bottom: 30px;
+  border: none;
+  outline: none;
 }
 
 .room-details-btn:hover {
