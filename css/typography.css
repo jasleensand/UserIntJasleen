@@ -100,9 +100,10 @@ line-height: normal;
 }
 
 .footer-links{
-    font-family:'baskerville';
-    font-size: 11px;
+   
+    font-size: 8px;
 }
+
 
 p{
     font-size: 14px;
@@ -320,4 +321,26 @@ font-size: 25px;
 .blog-btn{
   font-size: 20px;
   font-family: 'Amoria';
+}
+
+.footer-content{
+  color: #f57c1f;
+  justify-content: center;
+  font-family: 'LEMON_MILK_regular';
+  font-size: 6px;
+}
+
+.footer-links{
+  color: #f57c1f;
+  font-family: "LEMON_MILK_regular";
+}
+
+@media (min-width: 768px) {
+  .footer-content{
+    font-size:12px;
+  }
+
+  .footer-links{
+    font-size: 12px;
+  }
 }

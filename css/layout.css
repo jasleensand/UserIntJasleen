@@ -347,7 +347,11 @@
   align-items: flex-start;
   text-align: left;
 }
-
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 .footer-logo {
   width: 60px;
   height: auto;
@@ -1432,12 +1436,7 @@ body.rooms-page {
 }
 
 .blog-card {
-  display: none; 
-}
-
-
-.blog-card.visible {
-  display: flex;
+  display: none;
 }
 
 
