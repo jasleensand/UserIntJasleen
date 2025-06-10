@@ -58,6 +58,8 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
 }
 
   .desktop-nav a.nav_buttons {
@@ -76,6 +78,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
 }
 .desktop-nav a.nav_buttons:hover {
   background-color: white;
@@ -507,6 +511,7 @@
   background-color: transparent;
   border-radius: 14px;
   border: 1px solid #FFF;
+  transition: transform 0.3s ease-in-out;
   margin-bottom: 8px;
   text-decoration: none;
   text-align: center;
@@ -540,6 +545,8 @@
 .room-details-btn:hover {
   background-color: white;
   color: #f57c1f;
+  transition: transform 0.3s ease-in-out;
+
 }
 
  
