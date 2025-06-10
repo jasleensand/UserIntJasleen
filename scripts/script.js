@@ -9,7 +9,7 @@ window.addEventListener("scroll", () => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  // --- General Setup ---
+  // General Setup 
   const menuToggle = document.getElementById("menu-toggle");
   const mobileNav = document.getElementById("mobile-nav");
   const cartIndicator = document.getElementById("cart-icon-indicator");
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const cartEmptyPath = `${pathPrefix}images/cart.svg`;
   let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
 
-  // --- Cart icon display ---
+  // Cart icon display 
   const updateCartIcon = () => {
     if (cartIndicator) {
       cartIndicator.style.display = cart.length > 0 ? "inline-block" : "none";
@@ -38,13 +38,13 @@ document.addEventListener("DOMContentLoaded", function () {
   };
   updateCartIcon();
 
-  // --- Mobile Nav Toggle ---
+  // Mobile Nav Toggle 
   menuToggle?.addEventListener("click", () => {
     mobileNav.classList.toggle("active");
   });
 
   
-  // --- Calendar Setup ---
+  // Calendar Setup 
   const calendarDates = document.getElementById("calendar-dates");
   const calendarMonth = document.getElementById("calendar-month");
   const prevBtn = document.getElementById("prev-month");
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   generateCalendar();
 
-  // --- Time Tabs ---
+  // Time Tabs 
   const dayTab = document.getElementById("dayTab");
   const eveningTab = document.getElementById("eveningTab");
   const timeOptions = document.getElementById("timeOptions");
@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
     renderTimes("evening");
   });
 
-  // --- Add to Cart ---
+  // Add to Cart 
   const addToCartBtn = document.getElementById("add-to-cart");
   const confirmationMsg = document.getElementById("confirmation-message");
 
@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // --- Cart Page Rendering ---
+  // Cart Page Rendering 
   const cartContainer = document.getElementById("cart-container");
   const emptyCart = document.querySelector(".empty-cart-section");
   const cartTotal = document.getElementById("cart-total");
@@ -348,9 +348,9 @@ document.getElementById("complete-purchase")?.addEventListener("click", (e) => {
     if (errorMessage) {
       errorMessage.textContent = "Please ensure all fields are filled in correctly.";
     }
-    step2Form.reportValidity(); // triggers native browser tooltip
+    step2Form.reportValidity(); 
   } else {
-    e.preventDefault(); // stop native form action
+    e.preventDefault(); 
     if (errorMessage) {
       errorMessage.textContent = "";
     }
