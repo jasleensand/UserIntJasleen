@@ -1431,5 +1431,53 @@ body.rooms-page {
   transform: scale(1.1);
 }
 
+.blog-card {
+  display: none; 
+}
 
 
+.blog-card.visible {
+  display: flex;
+}
+
+
+
+@media (min-width: 768px) {
+  #blog-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    justify-content: center; 
+    max-width: 1200px;
+    margin: 0 auto; 
+  }
+
+.blog-section {
+   max-width: 1024px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.blog-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+#show-more-btn {
+  width: 45px;
+  height: 45px;
+  rotate: 360deg;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+  .blog-card {
+    display: flex !important; 
+  }
+
+  .show-more-wrapper {
+    display: none; 
+  }
+
+}
