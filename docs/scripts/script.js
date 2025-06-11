@@ -362,7 +362,7 @@ document.getElementById("complete-purchase")?.addEventListener("click", (e) => {
 });
 
 
-//blog page 
+//blog page - shows 3 cards at a time for mobile layout
 const blogCards = document.querySelectorAll(".blog-card");
   const showMoreBtn = document.getElementById("show-more-btn");
 

@@ -1,3 +1,5 @@
+/*Nav bar*/
+
 .hamburger {
   height: 21px;
   width: 34px;
@@ -113,7 +115,7 @@
 
 }
 
-/* Explore rooms */
+/*  Explore rooms section  */
 .explore-rooms {
   background-color: #f57c1f;
   padding: 3rem 1rem;
@@ -136,7 +138,7 @@
 }
 
 .room-card {
-  display: none; /* Hide all by default */
+  display: none; 
   background-color: #3e2b23;
   border-top-left-radius: 999px;
   border-top-right-radius: 999px;
@@ -234,11 +236,11 @@
   }
 
   .room-card {
-    display: none; /* hide by default */
+    display: none; 
   }
 
   .room-card.active {
-    display: flex; /* only show active ones */
+    display: flex; 
   }
 
   .carousel-next {
@@ -255,7 +257,7 @@
 .star-banner{
   width: 100%;
   height: auto;
-  min-height: 80px; /* Adjust as needed */
+  min-height: 80px; 
   object-fit: cover;
   display: block;
 }
@@ -519,7 +521,7 @@
 
 .product-list {
   display: grid;
-  grid-template-columns: 1fr; /* Default: 1 column on mobile */
+  grid-template-columns: 1fr; 
   gap: 2rem;
   justify-items: center;
   padding: 2rem 1rem;
