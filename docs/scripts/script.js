@@ -208,7 +208,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const card = document.createElement("div");
   card.className = "booking-card";
   card.innerHTML = `
-    <h3 class="cart-card-heading">${item.room}</h3>
+    <div class="cart-card-heading" style="min-height: 60px; display: flex; align-items: center; justify-content: center; text-align: center;">
+  ${item.room}
+    </div>
     <p class="cart-date">${item.date}</p>
     <p class="cart-time">${item.time}</p>
     <p class="cart-people">

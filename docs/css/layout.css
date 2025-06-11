@@ -511,10 +511,10 @@
   background-color: transparent;
   border-radius: 14px;
   border: 1px solid #FFF;
-  transition: transform 0.3s ease-in-out;
   margin-bottom: 8px;
   text-decoration: none;
   text-align: center;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 } 
 
 .product-list {
@@ -530,6 +530,10 @@
   .product-list {
     grid-template-columns: repeat(3, 1fr);
   }
+  .room-details-btn:hover {
+  background-color: white;
+  color: #f57c1f;
+}
 }
 
 
@@ -542,12 +546,7 @@
   outline: none;
 }
 
-.room-details-btn:hover {
-  background-color: white;
-  color: #f57c1f;
-  transition: transform 0.3s ease-in-out;
 
-}
 
  
 
@@ -1029,10 +1028,6 @@ body.rooms-page {
   flex-direction: column;
 }
 
-.cart-card-heading{
-  margin-bottom: 2rem;
-  margin-top: 1.5rem;
-}
 
 .total-cost{
   margin-top: 2rem; 
@@ -1044,6 +1039,14 @@ body.rooms-page {
   grid-template-columns: 1fr;
   gap: 2rem;
   padding: 2.0rem
+}
+.cart-card-heading {
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
 }
 
 .cart-summary {
